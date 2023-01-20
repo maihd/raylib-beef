@@ -30,17 +30,25 @@ namespace Raylib
 		public String 	Title;
 		public int32	Width;
 		public int32	Height;
+		public int32	FPS = 60;
 
 		public this()
 		{
-			Debug.Assert(gApp == null, "Multiple application created");
+			Debug.Assert(gApp == null, "Multiple applications are existing!");
 			gApp = this;
+		}
+
+		public ~this()
+		{
+			Debug.Assert(gApp == this, "Multiple applications are existing!");
+			gApp = null;
 		}
 
 		public virtual void Init()
 		{
 			Functions.InitWindow(Width, Height, Title.CStr());
 			Functions.InitAudioDevice();
+			Functions.SetTargetFPS(FPS);
 		}
 
 		public virtual void Close()
@@ -60,10 +68,10 @@ namespace Raylib
 		public virtual void Run()
 		{
 			Init();
+			defer Close();
 
 #if BF_PLATFORM_WASM
-			defer Close();
-			emscripten_set_main_loop(=> EmscriptenMainLoop, 0, 1);
+			emscripten_set_main_loop(=> EmscriptenMainLoop, FPS, 1);
 #else
 			while (RunOneFrame()) {}
 #endif
@@ -86,21 +94,15 @@ namespace Raylib
 		}
 
 #if BF_PLATFORM_WASM
-			private function void em_callback_func();
+		private function void em_callback_func();
 
-			[CLink, CallingConvention(.Stdcall)]
-			private static extern void emscripten_set_main_loop(em_callback_func func, int32 fps, int32 simulateInfinteLoop);
+		[CLink, CallingConvention(.Stdcall)]
+		private static extern void emscripten_set_main_loop(em_callback_func func, int32 fps, int32 simulateInfinteLoop);
 
-			[CLink, CallingConvention(.Stdcall)]
-			private static extern int32 emscripten_set_main_loop_timing(int32 mode, int32 value);
-
-			[CLink, CallingConvention(.Stdcall)]
-			private static extern double emscripten_get_now();
-
-			private static void EmscriptenMainLoop()
-			{
-				gApp.RunOneFrame();
-			}
+		private static void EmscriptenMainLoop()
+		{
+			gApp.RunOneFrame();
+		}
 #endif
 	}
 }
