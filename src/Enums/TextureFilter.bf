@@ -1,5 +1,5 @@
 using System.Interop;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Texture parameters: filter mode
 	// NOTE 1: Filtering considers mipmaps if available in the texture

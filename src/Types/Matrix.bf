@@ -1,5 +1,5 @@
 using System;
-namespace raylib_beef.Types
+namespace Raylib.Types
 {
 	// Matrix type (OpenGL style 4x4 - right handed, column major)
 	[CRepr]

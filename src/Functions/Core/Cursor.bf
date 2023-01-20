@@ -1,7 +1,8 @@
 using System;
-namespace raylib_beef
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Shows cursor

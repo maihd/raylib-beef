@@ -1,5 +1,6 @@
 using System.Interop;
-namespace raylib_beef.Enums
+
+namespace Raylib.Enums
 {
 	// Cubemap layout type
 	public enum CubemapLayout : c_int

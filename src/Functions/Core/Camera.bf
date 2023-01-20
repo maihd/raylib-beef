@@ -1,9 +1,10 @@
 using System;
-using raylib_beef.Enums;
-using raylib_beef.Types;
-namespace raylib_beef
+using Raylib.Enums;
+using Raylib.Types;
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Set camera mode (multiple camera modes available)

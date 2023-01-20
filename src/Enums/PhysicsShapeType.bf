@@ -1,5 +1,5 @@
 using System.Interop;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	public enum PhysicsShapeType : c_int
 	{

@@ -1,10 +1,10 @@
 using System;
 using System.Interop;
-using raylib_beef.Types;
-using raylib_beef.Enums;
-namespace raylib_beef
+using Raylib.Types;
+using Raylib.Enums;
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 
 		// TODO. dodelat

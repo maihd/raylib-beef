@@ -30,7 +30,7 @@
 **/
 
 using System;
-namespace raylib_beef
+namespace Raylib
 {
 	public static class Easings
 	{

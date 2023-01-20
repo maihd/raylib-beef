@@ -1,9 +1,9 @@
 using System;
-using raylib_beef.Types;
+using Raylib.Types;
 using System.Interop;
-namespace raylib_beef
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		/// Screen-space-related functions
 

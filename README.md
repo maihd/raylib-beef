@@ -25,6 +25,7 @@
 - there are no bindings for text manipulating methods
 	- Beef already has custom methods for text manupulation
 -  rlgl bindings are **partly done**
+- Add `-sUSE_GLFW=3` on wasm32 target
 
 ## TODO:
 - Rewrite examples in Beef

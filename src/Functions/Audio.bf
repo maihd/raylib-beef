@@ -1,9 +1,10 @@
 using System;
-using raylib_beef.Types;
+using Raylib.Types;
 using System.Interop;
-namespace raylib_beef
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		// Audio device management functions
 		[CLink]

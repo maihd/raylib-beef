@@ -1,9 +1,10 @@
 using System;
 using System.Interop;
-using raylib_beef.Types;
-namespace raylib_beef
+using Raylib.Types;
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Initialize window and OpenGL context

@@ -1,6 +1,6 @@
-using raylib_beef.Enums;
+using Raylib.Enums;
 using System;
-namespace raylib_beef.Types
+namespace Raylib.Types
 {
 	typealias Camera = Camera3D;
 

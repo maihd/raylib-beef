@@ -1,6 +1,6 @@
 using System.Interop;
 using System;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Material map type
 	[AllowDuplicates]

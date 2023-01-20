@@ -1,6 +1,6 @@
 using System;
-using raylib_beef.Enums;
-namespace raylib_beef.Types
+using Raylib.Enums;
+namespace Raylib.Types
 {
 	typealias Texture2D = Texture;
 

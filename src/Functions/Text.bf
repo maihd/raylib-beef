@@ -1,10 +1,11 @@
 using System;
-using raylib_beef.Types;
+using Raylib.Types;
 using System.Interop;
-using raylib_beef.Enums;
-namespace raylib_beef
+using Raylib.Enums;
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		// NOTE: This module is only partially implemented
 		// because string operations are already included

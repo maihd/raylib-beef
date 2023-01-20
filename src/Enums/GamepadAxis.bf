@@ -1,5 +1,6 @@
 using System.Interop;
-namespace raylib_beef.Enums
+
+namespace Raylib.Enums
 {
 	public enum GamepadAxis	: c_int
 	{

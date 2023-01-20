@@ -1,9 +1,9 @@
 using System.Text;
 using System;
 using System.Interop;
-using raylib_beef.Types;
+using Raylib.Types;
 
-namespace raylib_beef
+namespace Raylib
 {
 
 	// ----------------------------------------------------------------------------------

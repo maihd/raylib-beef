@@ -1,4 +1,4 @@
-namespace raylib_beef.Types.Private
+namespace Raylib.Types.Private
 {
 // Audio buffer structure
 	/*struct rAudioBuffer

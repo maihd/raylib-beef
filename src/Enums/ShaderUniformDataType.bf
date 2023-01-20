@@ -1,5 +1,5 @@
 using System.Interop;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Shader uniform data types
 	public enum ShaderUniformDataType : c_int

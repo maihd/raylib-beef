@@ -1,5 +1,6 @@
 using System.Interop;
-namespace raylib_beef.Enums
+
+namespace Raylib.Enums
 {
 	// Font type, defines generation method
 	public enum FontType : c_int

@@ -1,5 +1,6 @@
 using System.Interop;
-namespace raylib_beef.Enums
+
+namespace Raylib.Enums
 {
 	// Gestures type
 	// NOTE: It could be used as flags to enable only some gestures

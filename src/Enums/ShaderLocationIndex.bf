@@ -1,6 +1,6 @@
 using System.Interop;
 using System;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Shader location point type
 	[AllowDuplicates]

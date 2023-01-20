@@ -1,8 +1,8 @@
 using System;
 using System.Interop;
-namespace raylib_beef
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		// Persistent storage management ------------------
 		[CLink]

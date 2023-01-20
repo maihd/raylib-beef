@@ -1,5 +1,6 @@
 using System;
-namespace raylib_beef
+
+namespace Raylib
 {
 	static
 	{

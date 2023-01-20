@@ -1,6 +1,6 @@
 using System;
-using static raylib_beef.Raylib;
-namespace raylib_beef.Types
+using static Raylib.Functions;
+namespace Raylib.Types
 {
 	// Color type, RGBA (32bit)
 	[CRepr]

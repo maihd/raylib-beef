@@ -1,8 +1,9 @@
 using System;
 using System.Interop;
-namespace raylib_beef
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Load file data as byte array (read)

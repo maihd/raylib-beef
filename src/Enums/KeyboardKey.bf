@@ -1,6 +1,7 @@
-using System.Interop;
 using System;
-namespace raylib_beef.Enums
+using System.Interop;
+
+namespace Raylib.Enums
 {
 	// Keyboard keys
 	[AllowDuplicates]

@@ -1,4 +1,4 @@
-namespace raylib_beef.Types
+namespace Raylib.Types
 {
 	typealias Quaternion = Vector4;
 

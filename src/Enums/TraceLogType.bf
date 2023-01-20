@@ -1,5 +1,5 @@
 using System.Interop;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Trace log type
 	public enum TraceLogType : c_int

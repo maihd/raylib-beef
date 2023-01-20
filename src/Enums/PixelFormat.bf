@@ -1,5 +1,5 @@
 using System.Interop;
-namespace raylib_beef.Enums
+namespace Raylib.Enums
 {
 	// Pixel formats
 	// NOTE: Support depends on OpenGL version and platform

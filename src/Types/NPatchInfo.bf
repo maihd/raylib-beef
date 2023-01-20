@@ -1,5 +1,5 @@
 using System;
-namespace raylib_beef.Types
+namespace Raylib.Types
 {
 	[CRepr]
 	// N-Patch layout info

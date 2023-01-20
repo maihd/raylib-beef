@@ -1,7 +1,7 @@
 using System;
 using System.Interop;
-using raylib_beef.Enums;
-namespace raylib_beef.Types
+using Raylib.Enums;
+namespace Raylib.Types
 {
 	[CRepr]
 	public struct Image

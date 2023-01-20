@@ -1,8 +1,8 @@
-using raylib_beef.Types;
+using Raylib.Types;
 using System;
-namespace raylib_beef
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Load VR stereo config for VR simulator device parameters

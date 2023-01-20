@@ -1,10 +1,11 @@
 using System;
-using raylib_beef.Enums;
 using System.Interop;
 
-namespace raylib_beef
+using Raylib.Enums;
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		/// Callback delegate used in SetTraceLogCallback to allow for custom logging
 		public function void TraceLogCallback(TraceLogType logType, char8* text, void* varArgs);

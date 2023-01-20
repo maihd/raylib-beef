@@ -1,10 +1,11 @@
 using System;
-using raylib_beef.Types;
+using Raylib.Types;
 using System.Interop;
-using raylib_beef.Enums;
-namespace raylib_beef
+using Raylib.Enums;
+
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		// Image loading functions
 		// NOTE: This functions do not require GPU access

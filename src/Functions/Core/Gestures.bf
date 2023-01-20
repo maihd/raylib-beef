@@ -1,10 +1,10 @@
 using System;
-using raylib_beef.Enums;
+using Raylib.Enums;
 using System.Interop;
-using raylib_beef.Types;
-namespace raylib_beef
+using Raylib.Types;
+namespace Raylib
 {
-	extension Raylib
+	extension Functions
 	{
 		[CLink]
 		/// Enable a set of gestures using flags
