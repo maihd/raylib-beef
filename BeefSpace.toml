@@ -1,0 +1,6 @@
+FileVersion = 1
+Projects = {raylib-beef = {Path = "."}}
+ExtraPlatforms = ["wasm32"]
+
+[Workspace]
+StartupProject = "raylib-beef"

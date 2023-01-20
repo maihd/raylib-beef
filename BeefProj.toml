@@ -41,3 +41,6 @@ PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
 OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
 LibPaths = ["$(ProjectDir)/dist/win32/raylibdll.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
+
+[Configs.Debug.wasm32]
+LibPaths = ["$(ProjectDir)/dist/wasm32/libraylib.a"]
