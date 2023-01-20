@@ -2,11 +2,12 @@ using System;
 using raylib_beef.Enums;
 using raylib_beef.Types;
 using System.Interop;
+
 namespace raylib_beef
 {
 	public class Raylib
 	{
-		public const char8* RAYLIB_VERSION = "3.7";
+		public const char8* RAYLIB_VERSION = "4.2.0";
 
 		public const float DEG2RAD = Math.PI_f / 180.0f;
 		public const float RAD2DEG = 180.0f / Math.PI_f;

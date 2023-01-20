@@ -7,37 +7,37 @@ TargetType = "BeefLib"
 StartupObject = "Program"
 
 [Configs.DebugStatic.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/x64/\""
-LibPaths = ["$(ProjectDir)/dist/x64/raylib.lib"]
+OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
+LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 
 [Configs.DebugStatic.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/x86/\""
-LibPaths = ["$(ProjectDir)/dist/x86/raylib.lib"]
+OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
+LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
 [Configs.ReleaseStatic.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/x64/\""
-LibPaths = ["$(ProjectDir)/dist/x64/raylib.lib"]
+OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
+LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 
 [Configs.ReleaseStatic.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/x86/\""
-LibPaths = ["$(ProjectDir)/dist/x86/raylib.lib"]
+OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
+LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
 [Configs.Release.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/x64DLL/\""
-LibPaths = ["$(ProjectDir)/dist/x64DLL/raylib.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64DLL/*.dll\")"]
+OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
+LibPaths = ["$(ProjectDir)/dist/win64/raylibdll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
 
 [Configs.Release.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/x86DLL/\""
-LibPaths = ["$(ProjectDir)/dist/x86DLL/raylib.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x86DLL/*.dll\")"]
+OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
+LibPaths = ["$(ProjectDir)/dist/win32/raylibdll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
 
 [Configs.Debug.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/x64DLL/\""
-LibPaths = ["$(ProjectDir)/dist/x64DLL/raylib.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64DLL/*.dll\")"]
+OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
+LibPaths = ["$(ProjectDir)/dist/win64/raylibdll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
 
 [Configs.Debug.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/x86DLL/\""
-LibPaths = ["$(ProjectDir)/dist/x86DLL/raylib.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x86DLL/*.dll\")"]
+OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
+LibPaths = ["$(ProjectDir)/dist/win32/raylibdll.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
