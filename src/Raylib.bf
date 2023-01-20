@@ -79,10 +79,10 @@ namespace Raylib
 				Draw();
 				Functions.EndDrawing();
 
-				return false;
+				return true;
 			}
 
-			return true;
+			return false;
 		}
 
 #if BF_PLATFORM_WASM
