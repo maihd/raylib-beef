@@ -7,7 +7,7 @@
 > **Attention!** These bindings are still in development. Bugs may occur.
 	You can download this library with binaries from the [Release page](https://github.com/maihd/raylib-beef/releases)!
 
-> **OS Support** is limited to Windows/Wasm32 right now. I am only able test this library on Windows/Wasm32 at the moment.
+> **OS Support** is limited to Windows/Wasm32 right now. I am only able test this library on Windows/Wasm32 at the moment. Wasm32 have memory access bugs (Im experiment with other project that target with Beef + WebGL and C + Raylib + WebGL to find out what cause bugs).
 
 <br>
 <br>

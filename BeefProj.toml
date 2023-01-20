@@ -5,6 +5,7 @@ Dependencies = {corlib = "*", corlib = "*", corlib = "*"}
 Name = "raylib-beef"
 TargetType = "BeefLib"
 StartupObject = "Program"
+DefaultNamespace = "Raylib"
 
 [Configs.DebugStatic.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""

@@ -34,26 +34,26 @@ namespace Raylib
 
 		public this()
 		{
-			Debug.Assert(gApp == null, "Multiple applications are existing!");
+			//Debug.Assert(gApp == null, "Multiple applications are existing!");
 			gApp = this;
 		}
 
 		public ~this()
 		{
-			Debug.Assert(gApp == this, "Multiple applications are existing!");
-			gApp = null;
+			//Debug.Assert(gApp == this, "Multiple applications are existing!");
+			//gApp = null;
 		}
 
 		public virtual void Init()
 		{
-			Functions.InitWindow(Width, Height, Title.CStr());
-			Functions.InitAudioDevice();
+			Functions.InitWindow((c_int)Width, (c_int)Height, Title.CStr());
+			//Functions.InitAudioDevice();
 			Functions.SetTargetFPS(FPS);
 		}
 
 		public virtual void Close()
 		{
-			Functions.CloseAudioDevice();
+			//Functions.CloseAudioDevice();
 			Functions.CloseWindow();
 		}
 
@@ -68,11 +68,11 @@ namespace Raylib
 		public virtual void Run()
 		{
 			Init();
-			defer Close();
 
 #if BF_PLATFORM_WASM
 			emscripten_set_main_loop(=> EmscriptenMainLoop, FPS, 1);
 #else
+			defer Close();
 			while (RunOneFrame()) {}
 #endif
 		}
