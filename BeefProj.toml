@@ -7,40 +7,40 @@ TargetType = "BeefLib"
 StartupObject = "Program"
 DefaultNamespace = "Raylib"
 
-[Configs.DebugStatic.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
-LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
+# [Configs.DebugStatic.Win64]
+# OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+# LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 
-[Configs.DebugStatic.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
-LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
+# [Configs.DebugStatic.Win32]
+# OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+# LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
-[Configs.ReleaseStatic.Win64]
-OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
-LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
+# [Configs.ReleaseStatic.Win64]
+# OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+# LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 
-[Configs.ReleaseStatic.Win32]
-OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
-LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
+# [Configs.ReleaseStatic.Win32]
+# OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
+# LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
 [Configs.Release.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
-LibPaths = ["$(ProjectDir)/dist/win64/raylibdll.lib"]
+LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
 
 [Configs.Release.Win32]
 OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
-LibPaths = ["$(ProjectDir)/dist/win32/raylibdll.lib"]
+LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
 
 [Configs.Debug.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
-LibPaths = ["$(ProjectDir)/dist/win64/raylibdll.lib"]
+LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
 
 [Configs.Debug.Win32]
 OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
-LibPaths = ["$(ProjectDir)/dist/win32/raylibdll.lib"]
+LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
 
 [Configs.Debug.wasm32]

@@ -91,7 +91,7 @@ namespace YOUR_NAMESPACE_HERE
 </center>
 
 ## Static linking
-> Static linking is not worked now.
+> Static linking is not worked now. (cause undefined reference even when input exactly same *.lib with raylib.sln)
 By default linking is set to dynamically link to Raylib. You can change that by selecting different raylib-beef **project configuration** in **Workspace** settings. You can select from **DebugStatic** and **ReleaseStatic**.
 
 ![](img/static-linking.png)

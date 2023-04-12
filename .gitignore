@@ -6,3 +6,5 @@ BeefSpace_User.toml
 deps
 deps_build_x32
 deps_build_x64
+deps_build_x32_dll
+deps_build_x64_dll
