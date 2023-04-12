@@ -2,3 +2,7 @@
 recovery
 BeefSpace_User.toml
 *.zip
+
+deps
+deps_build_x32
+deps_build_x64

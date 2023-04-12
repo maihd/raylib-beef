@@ -5,9 +5,11 @@
 **raylib-beef** is a Beef wrapper library and Beefie Version for **Raylib 4.2.0**, a simple and easy-to-use library. In combination with the benefits of the Beef programming language, making games is pure satisfaction!
 
 > **Attention!** These bindings are still in development. Bugs may occur.
-	You can download this library with binaries from the [Release page](https://github.com/maihd/raylib-beef/releases)!
+	You can download this library with binaries from the [Release page](https://github.com/M0n7y5/raylib-beef/releases)!
 
 > **OS Support** is limited to Windows/Wasm32 right now. I am only able test this library on Windows/Wasm32 at the moment. Wasm32 have memory access bugs (Im experiment with other project that target with Beef + WebGL and C + Raylib + WebGL to find out what cause bugs).
+
+> **Visual Studio** versions only worked on vs2017 and vs2019. vs2022 cause may undefined references. dist is build with Visual Studio 2019, if you face any build errors or crash on runtime, please run build_deps.bat to rebuid dist with your devenv.
 
 <br>
 <br>
@@ -89,6 +91,7 @@ namespace YOUR_NAMESPACE_HERE
 </center>
 
 ## Static linking
+> Static linking is not worked now.
 By default linking is set to dynamically link to Raylib. You can change that by selecting different raylib-beef **project configuration** in **Workspace** settings. You can select from **DebugStatic** and **ReleaseStatic**.
 
 ![](img/static-linking.png)
