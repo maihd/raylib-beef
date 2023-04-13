@@ -24,7 +24,7 @@ namespace Raylib
 
 		[CLink]
 		/// Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR)
-		public static extern void TraceLog(TraceLogType logType, char8* text);
+		public static extern void TraceLog(TraceLogType logType, char8* text, ...);
 
 		[CLink]
 		/// Set the

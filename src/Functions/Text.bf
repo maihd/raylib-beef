@@ -82,7 +82,7 @@ namespace Raylib
 
 		[CLink]
 		// Text formatting with variables (sprintf style)
-		public static extern char8* TextFormat(char8* text, void* args);
+		public static extern char8* TextFormat(char8* text, ...);
 
 		
 
