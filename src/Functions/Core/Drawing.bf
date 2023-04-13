@@ -1,7 +1,6 @@
 using System;
 using System.Interop;
 
-using Raylib.Types;
 using Raylib.Enums;
 
 namespace Raylib

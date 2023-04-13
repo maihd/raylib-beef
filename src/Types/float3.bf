@@ -1,4 +1,4 @@
-namespace Raylib.Types
+namespace Raylib
 {
 	public struct float3
 	{

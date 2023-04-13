@@ -1,14 +1,15 @@
 using System;
 using System.Interop;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	public struct Mesh
 	{
 		// Number of vertices stored in arrays
-		public c_int vertexCount;
+		public int32 vertexCount;
 		// Number of triangles stored (indexed or not)
-		public c_int triangleCount;
+		public int32 triangleCount;
 
 		// Default vertex data
 

@@ -1,7 +1,8 @@
 using System;
 using System.Interop;
 using Raylib.Enums;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	public struct Image

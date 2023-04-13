@@ -1,6 +1,7 @@
 using Raylib.Enums;
 using System;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	typealias Camera = Camera3D;
 

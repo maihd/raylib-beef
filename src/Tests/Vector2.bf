@@ -2,7 +2,6 @@ namespace Raylib.Tests;
 
 using System;
 using Raylib;
-using Raylib.Types;
 
 static
 {

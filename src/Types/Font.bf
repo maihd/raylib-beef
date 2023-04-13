@@ -1,6 +1,7 @@
 using System;
 using System.Interop;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	public struct Font

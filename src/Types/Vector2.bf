@@ -1,5 +1,6 @@
 using System;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	public struct Vector2

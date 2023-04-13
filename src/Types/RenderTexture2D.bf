@@ -1,5 +1,6 @@
 using System;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	typealias RenderTexture2D = RenderTexture;
 

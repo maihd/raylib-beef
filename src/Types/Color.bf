@@ -1,6 +1,7 @@
 using System;
 using static Raylib.Functions;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	// Color type, RGBA (32bit)
 	[CRepr]

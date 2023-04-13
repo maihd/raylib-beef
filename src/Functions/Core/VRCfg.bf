@@ -1,5 +1,5 @@
-using Raylib.Types;
 using System;
+
 namespace Raylib
 {
 	extension Functions

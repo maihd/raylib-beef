@@ -1,6 +1,5 @@
 using System;
 using System.Interop;
-using Raylib.Types;
 
 namespace Raylib
 {

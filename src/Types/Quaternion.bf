@@ -1,5 +1,4 @@
-namespace Raylib.Types
+namespace Raylib
 {
 	typealias Quaternion = Vector4;
-
 }

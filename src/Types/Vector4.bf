@@ -1,5 +1,6 @@
 using System;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	public struct Vector4
@@ -26,38 +27,38 @@ namespace Raylib.Types
 		}
 
 		[Inline]
-		public static Quaternion operator+(Quaternion q1, Quaternion q2)
+		public static Vector4 operator+(Vector4 q1, Vector4 q2)
 		{
 			return .(q1.x + q2.x, q1.y + q2.y, q1.z + q2.z, q1.w + q2.w);
 		}
 
 		[Inline]
-		public static Quaternion operator+(Quaternion q, float add)
+		public static Vector4 operator+(Vector4 q, float add)
 		{
 			return .(q.x + add, q.y + add, q.z + add, q.w + add);
 		}
 
 		[Inline]
-		public static Quaternion operator-(Quaternion q1, Quaternion q2)
+		public static Vector4 operator-(Vector4 q1, Vector4 q2)
 		{
 			return .(q1.x - q2.x, q1.y - q2.y, q1.z - q2.z, q1.w - q2.w);
 		}
 
 		[Inline]
-		public static Quaternion operator-(Quaternion q, float sub)
+		public static Vector4 operator-(Vector4 q, float sub)
 		{
 			return .(q.x - sub, q.y - sub, q.z - sub, q.w - sub);
 		}
-
-		[Inline]
+		
 		/// Returns identity quaternion
+		[Inline]
 		public static Quaternion Identity()
 		{
 			return .(0.0f, 0.0f, 0.0f, 1.0f);
 		}
-
+		
+		/// Computes the length of a Vector4
 		[Inline]
-		/// Computes the length of a quaternion
 		public float Length()
 		{
 			return Math.Sqrt(
@@ -68,7 +69,7 @@ namespace Raylib.Types
 		}
 
 		[Inline]
-		/// Computes the length of a quaternion
+		/// Computes the length of a Vector4
 		public Quaternion Normalize()
 		{
 			Quaternion result = default;

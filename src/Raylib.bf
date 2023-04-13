@@ -3,7 +3,6 @@ using System.Interop;
 using System.Diagnostics;
 
 using Raylib.Enums;
-using Raylib.Types;
 
 namespace Raylib
 {

@@ -1,5 +1,4 @@
 using System;
-using Raylib.Types;
 using System.Interop;
 using Raylib.Enums;
 

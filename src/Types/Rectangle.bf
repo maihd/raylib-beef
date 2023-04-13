@@ -1,5 +1,6 @@
 using System;
-namespace Raylib.Types
+
+namespace Raylib
 {
 	[CRepr]
 	// Rectangle type

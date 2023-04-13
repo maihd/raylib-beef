@@ -1,5 +1,5 @@
 using System;
-namespace Raylib.Types
+namespace Raylib
 {
 	[CRepr]
 	// N-Patch layout info

@@ -1,6 +1,6 @@
 using System;
-using Raylib.Types;
 using System.Interop;
+
 namespace Raylib
 {
 	extension Functions

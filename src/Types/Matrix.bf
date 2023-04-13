@@ -1,5 +1,5 @@
 using System;
-namespace Raylib.Types
+namespace Raylib
 {
 	// Matrix type (OpenGL style 4x4 - right handed, column major)
 	[CRepr]
