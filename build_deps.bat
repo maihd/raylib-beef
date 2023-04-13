@@ -15,55 +15,55 @@ set RAYLIB_DLL_FLAGS=%RAYLIB_FLAGS% -DBUILD_SHARED_LIBS=ON -DSHARED=1
 
 : Build raylib static library for x86
 
-if not exist deps_build_x32 (
-    mkdir deps_build_x32
-)
+@REM if not exist deps_build_x32 (
+@REM     mkdir deps_build_x32
+@REM )
 
-pushd deps_build_x32
+@REM pushd deps_build_x32
 
-%CMAKE% ../deps/raylib -A Win32 -DCUSTOMIZE_BUILD=ON %RAYLIB_FLAGS%
-%CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
+@REM %CMAKE% ../deps/raylib -A Win32 -DCUSTOMIZE_BUILD=ON %RAYLIB_FLAGS%
+@REM %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
 
 popd
 
 : Build raylib static library for x64
 
-if not exist deps_build_x64 (
-    mkdir deps_build_x64
+@REM if not exist deps_build_x64 (
+@REM     mkdir deps_build_x64
+@REM )
+
+@REM pushd deps_build_x64
+
+@REM %CMAKE% ../deps/raylib -A x64 -DCUSTOMIZE_BUILD=ON %RAYLIB_FLAGS%
+@REM %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
+
+@REM popd
+
+: Build raylib DLL for x86
+
+if not exist deps_build_x32_dll (
+    mkdir deps_build_x32_dll
 )
 
-pushd deps_build_x64
+pushd deps_build_x32_dll
 
-%CMAKE% ../deps/raylib -A x64 -DCUSTOMIZE_BUILD=ON %RAYLIB_FLAGS%
+%CMAKE% ../deps/raylib -A Win32 -DCUSTOMIZE_BUILD=ON %RAYLIB_DLL_FLAGS%
 %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
 
 popd
 
-: Build raylib DLL for x86
-
-@REM if not exist deps_build_x32_dll (
-@REM     mkdir deps_build_x32_dll
-@REM )
-
-@REM pushd deps_build_x32_dll
-
-@REM %CMAKE% ../deps/raylib -A Win32 -DCUSTOMIZE_BUILD=ON %RAYLIB_DLL_FLAGS%
-@REM %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
-
-@REM popd
-
 : Build raylib DLL for x64
 
-@REM if not exist deps_build_x64_dll (
-@REM     mkdir deps_build_x64_dll
-@REM )
+if not exist deps_build_x64_dll (
+    mkdir deps_build_x64_dll
+)
 
-@REM pushd deps_build_x64_dll
+pushd deps_build_x64_dll
 
-@REM %CMAKE% ../deps/raylib -A x64 -DCUSTOMIZE_BUILD=ON %RAYLIB_DLL_FLAGS%
-@REM %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
+%CMAKE% ../deps/raylib -A x64 -DCUSTOMIZE_BUILD=ON %RAYLIB_DLL_FLAGS%
+%CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
 
-@REM popd
+popd
 
 : Copy files to dist folder
 
