@@ -23,6 +23,16 @@ DefaultNamespace = "Raylib"
 # OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
 # LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
+[Configs.Test.Win64]
+OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
+LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win64/*.dll\")"]
+
+[Configs.Test.Win32]
+OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
+LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
+
 [Configs.Release.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
 LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
