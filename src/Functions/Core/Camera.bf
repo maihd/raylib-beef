@@ -1,5 +1,4 @@
 using System;
-using Raylib.Enums;
 
 namespace Raylib
 {

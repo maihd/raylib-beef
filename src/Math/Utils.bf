@@ -29,6 +29,5 @@ namespace Raylib
 		{
 			return (value - inputStart) / (inputEnd - inputStart) * (outputEnd - outputStart) + outputStart;
 		}
-
 	}
 }

@@ -1,5 +1,4 @@
 using System;
-using Raylib.Enums;
 
 namespace Raylib
 {
@@ -19,7 +18,7 @@ namespace Raylib
 		/// Mipmap levels, 1 by default
 		public int32 mipmaps;
 		/// Data format (PixelFormat type)
-		public uint32 format;
+		public PixelFormat format;
 
 	}
 }

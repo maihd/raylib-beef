@@ -2,8 +2,6 @@ using System;
 using System.Interop;
 using System.Diagnostics;
 
-using Raylib.Enums;
-
 namespace Raylib
 {
 	static

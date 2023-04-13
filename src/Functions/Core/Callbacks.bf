@@ -1,8 +1,6 @@
 using System;
 using System.Interop;
 
-using Raylib.Enums;
-
 namespace Raylib
 {
 	extension Functions
