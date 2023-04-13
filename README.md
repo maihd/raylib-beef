@@ -48,7 +48,7 @@
 4. Write some code:
 ```csharp
 using System;
-using static raylib_beef.Raylib;
+using Raylib;
 
 namespace YOUR_NAMESPACE_HERE
 {
