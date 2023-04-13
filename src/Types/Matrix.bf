@@ -38,6 +38,27 @@ namespace Raylib
 		}*/
 
 		[Inline]
+		public this(float s)
+		{
+			m0  = s;
+			m1  = s;
+			m2  = s;
+			m3  = s;
+			m4  = s;
+			m5  = s;
+			m6  = s;
+			m7  = s;
+			m8  = s;
+			m9  = s;
+			m10 = s;
+			m11 = s;
+			m12 = s;
+			m13 = s;
+			m14 = s;
+			m15 = s;
+		}
+
+		[Inline]
 		/// Compute matrix determinant
 		public float Determinant()
 		{
