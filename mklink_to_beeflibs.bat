@@ -17,10 +17,9 @@ if exist "%BEEFLIBS_PATH%\raylib" (
     echo Overwriting "%BEEFLIBS_PATH%\raylib"
     rmdir /s /q "%BEEFLIBS_PATH%\raylib"
     del "%BEEFLIBS_PATH%\raylib"
-    goto :copy_to_beeflibs
 )
 
-mklink . "%BEEFLIBS_PATH%\raylib"
+mklink /J "%BEEFLIBS_PATH%\raylib" .
 
 :end
 echo Done
