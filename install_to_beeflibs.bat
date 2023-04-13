@@ -14,22 +14,8 @@ if not exist "%BEEFLIBS_PATH%" (
 )
 
 if exist "%BEEFLIBS_PATH%\raylib" (
-    @REM echo Raylib have been add to BeefLibs
-    @REM set /p OVERWRITE = "Do you want to overwrite it? (y/n): "
-
-    @REM if %OVERWRITE% == "y" (
-    @REM     echo Overwriting Raylib
-    @REM     rmdir /s /q Raylib
-    @REM     goto :copy_to_beeflibs
-    @REM ) else (
-    @REM     echo Not overwriting Raylib
-    @REM     goto :end
-    @REM )
-
-    
     echo Overwriting "%BEEFLIBS_PATH%\raylib"
     rmdir /s /q "%BEEFLIBS_PATH%\raylib"
-    goto :copy_to_beeflibs
 )
 
 :copy_to_beeflibs

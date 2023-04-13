@@ -8,6 +8,10 @@ namespace Raylib
 		// Misc. functions
 
 		[CLink]
+		// Get color with alpha applied, alpha goes from 0.0f to 1.0f
+		public static extern Color Fade(Color color, float alpha);                                 
+
+		[CLink]
 		/// Returns
 		// a random value between min and max (both included)
 		public static extern c_int GetRandomValue(c_int min, c_int max);
