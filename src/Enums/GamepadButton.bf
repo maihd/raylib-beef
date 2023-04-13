@@ -1,6 +1,6 @@
 using System.Interop;
 
-namespace Raylib.Enums
+namespace Raylib
 {
 	// Gamepad Buttons
 	public enum GamepadButton : c_int

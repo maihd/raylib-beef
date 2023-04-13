@@ -1,7 +1,7 @@
 using System;
 using System.Interop;
 
-namespace Raylib.Enums
+namespace Raylib
 {
 	// Keyboard keys
 	[AllowDuplicates]

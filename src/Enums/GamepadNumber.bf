@@ -1,6 +1,6 @@
 using System.Interop;
 
-namespace Raylib.Enums
+namespace Raylib
 {
 	// Gamepad number
 	public enum GamepadNumber : c_int

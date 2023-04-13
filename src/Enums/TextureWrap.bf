@@ -1,5 +1,6 @@
 using System.Interop;
-namespace Raylib.Enums
+
+namespace Raylib
 {
 	// Texture parameters: wrap mode
 	public enum TextureWrap	: c_int

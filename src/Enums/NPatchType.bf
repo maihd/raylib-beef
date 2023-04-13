@@ -1,5 +1,6 @@
 using System.Interop;
-namespace Raylib.Enums
+
+namespace Raylib
 {
 	// Type of n-patch
 	public enum NPatchType : c_int

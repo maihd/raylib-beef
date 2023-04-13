@@ -1,5 +1,6 @@
 using System.Interop;
-namespace Raylib.Enums
+
+namespace Raylib
 {
 	// Mouse buttons
 	public enum MouseButton	: c_int

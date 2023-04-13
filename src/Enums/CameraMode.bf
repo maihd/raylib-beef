@@ -1,6 +1,6 @@
 using System.Interop;
 
-namespace Raylib.Enums
+namespace Raylib
 {
 	// Camera system modes
 	public enum CameraMode : c_int
