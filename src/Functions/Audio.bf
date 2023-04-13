@@ -124,16 +124,19 @@ namespace Raylib
 		/// Unload samples data loaded with LoadWaveSamples()
 		public static extern float* UnloadWaveSamples(float* samples);
 
-
-
+		
+		//----------------------------------------------------------------------------------
 		// Music management functions
+		//----------------------------------------------------------------------------------
+
 		[CLink]
 		/// Load music stream from file
 		public static extern Music LoadMusicStream(char8* fileName);
 
 		[CLink]
 		/// Load music stream from data
-		public static extern Music LoadMusicStreamFromMemory(char8 *fileType, uint8* data, c_int dataSize); 
+		public static extern Music LoadMusicStreamFromMemory(char8 *fileType, uint8* data, c_int dataSize);
+
 		[CLink]
 		/// Unload music stream
 		public static extern void UnloadMusicStream(Music music);

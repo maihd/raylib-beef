@@ -4,14 +4,11 @@ namespace Raylib
 	[CRepr]
 	public struct Music
 	{
-		public int32 ctxType;// Type of music context (audio filetype)
+		public AudioStream 			stream;		// Audio stream
+		public int32 				frameCount;	// Total number of frames (considering channels)
+		public bool					looping;	// Music looping enable
 
-		// ctxData refers to a void *
-		public void* ctxData;// Audio context data, depends on type
-
-		public uint32 sampleCount;// Total number of samples
-		public uint32 loopCount;// Loops count (times music will play), 0 means infinite loop
-
-		public AudioStream stream;// Audio stream
+		public MusicContextType		ctxType;	// Type of music context (audio filetype)
+		public void* 				ctxData;	// Audio context data, depends on type
 	}
 }
