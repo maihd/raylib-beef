@@ -1,7 +1,6 @@
 namespace raylib_beef_example;
 
 using Raylib;
-using static Raylib.Functions;
 
 class Program : RaylibApp
 {
@@ -9,9 +8,9 @@ class Program : RaylibApp
 	{
 		Self app = scope .();
 
- 		app.Title = "Raylib Beef Example";
-		app.Width = 800;
-		app.Height = 600;
+ 		app.title = scope .("Raylib Beef Example");
+		app.width = 800;
+		app.height = 600;
 		app.Run();
 	}
 

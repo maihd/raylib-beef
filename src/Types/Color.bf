@@ -1,5 +1,4 @@
 using System;
-using static Raylib.Functions;
 
 namespace Raylib
 {

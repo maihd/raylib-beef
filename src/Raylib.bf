@@ -16,19 +16,14 @@ namespace Raylib
 		public const int MAX_TOUCH_POINTS = 10;
 	}
 
-	[Obsolete]
-	public static class Functions
-	{
-	}
-
 	public abstract class RaylibApp
 	{
 		private static Self gApp;
 
-		public String 	Title;
-		public int32	Width;
-		public int32	Height;
-		public int32	FPS = 60;
+		public String 	title;
+		public int32	width;
+		public int32	height;
+		public int32	fps = 60;
 
 		public this()
 		{
@@ -44,9 +39,9 @@ namespace Raylib
 
 		public virtual void Init()
 		{
-			InitWindow((c_int)Width, (c_int)Height, Title.CStr());
+			InitWindow(width, height, title.CStr());
 			InitAudioDevice();
-			SetTargetFPS(FPS);
+			SetTargetFPS(fps);
 		}
 
 		public virtual void Close()
