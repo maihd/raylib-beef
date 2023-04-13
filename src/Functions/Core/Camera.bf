@@ -2,7 +2,7 @@ using System;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		[CLink]
 		/// Set camera mode (multiple camera modes available)

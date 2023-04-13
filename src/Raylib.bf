@@ -16,6 +16,7 @@ namespace Raylib
 		public const int MAX_TOUCH_POINTS = 10;
 	}
 
+	[Obsolete]
 	public static class Functions
 	{
 	}
@@ -31,27 +32,27 @@ namespace Raylib
 
 		public this()
 		{
-			//Debug.Assert(gApp == null, "Multiple applications are existing!");
+			Debug.Assert(gApp == null, "Multiple applications are existing!");
 			gApp = this;
 		}
 
 		public ~this()
 		{
-			//Debug.Assert(gApp == this, "Multiple applications are existing!");
-			//gApp = null;
+			Debug.Assert(gApp == this, "Multiple applications are existing!");
+			gApp = null;
 		}
 
 		public virtual void Init()
 		{
-			Functions.InitWindow((c_int)Width, (c_int)Height, Title.CStr());
-			//Functions.InitAudioDevice();
-			Functions.SetTargetFPS(FPS);
+			InitWindow((c_int)Width, (c_int)Height, Title.CStr());
+			InitAudioDevice();
+			SetTargetFPS(FPS);
 		}
 
 		public virtual void Close()
 		{
-			//Functions.CloseAudioDevice();
-			Functions.CloseWindow();
+			CloseAudioDevice();
+			CloseWindow();
 		}
 
 		public virtual void Update(float dt)
@@ -76,13 +77,13 @@ namespace Raylib
 
 		private bool RunOneFrame()
 		{
-			if (!Functions.WindowShouldClose())
+			if (!WindowShouldClose())
 			{
-				Update(Functions.GetFrameTime());
+				Update(GetFrameTime());
 
-				Functions.BeginDrawing();
+				BeginDrawing();
 				Draw();
-				Functions.EndDrawing();
+				EndDrawing();
 
 				return true;
 			}

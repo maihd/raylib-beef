@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		/// Callback delegate used in SetTraceLogCallback to allow for custom logging
 		public function void TraceLogCallback(TraceLogType logType, char8* text, void* varArgs);

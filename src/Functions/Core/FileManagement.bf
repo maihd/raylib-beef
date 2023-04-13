@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		[CLink]
 		/// Load file data as byte array (read)

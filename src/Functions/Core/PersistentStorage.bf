@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// Persistent storage management ------------------
 		[CLink]

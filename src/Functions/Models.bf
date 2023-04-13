@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// Basic geometric 3D shapes drawing functions
 		[CLink]

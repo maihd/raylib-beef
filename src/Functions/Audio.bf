@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// Audio device management functions
 		[CLink]

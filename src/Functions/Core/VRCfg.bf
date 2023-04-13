@@ -2,7 +2,7 @@ using System;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		[CLink]
 		/// Load VR stereo config for VR simulator device parameters

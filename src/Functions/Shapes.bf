@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		[CLink]
 		/// Set texture and rectangle to be used on shapes drawing

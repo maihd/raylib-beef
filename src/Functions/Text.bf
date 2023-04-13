@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// NOTE: This module is only partially implemented
 		// because string operations are already included

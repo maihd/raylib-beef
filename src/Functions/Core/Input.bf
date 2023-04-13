@@ -1,8 +1,9 @@
 using System;
 using System.Interop;
+
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// Input-related functions: keyboard -----------------------
 		[CLink]

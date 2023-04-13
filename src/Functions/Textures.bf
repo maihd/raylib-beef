@@ -3,7 +3,7 @@ using System.Interop;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		// Image loading functions
 		// NOTE: This functions do not require GPU access

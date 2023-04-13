@@ -2,7 +2,7 @@ using System;
 
 namespace Raylib
 {
-	extension Functions
+	static
 	{
 		[CLink]
 		/// Shows cursor
