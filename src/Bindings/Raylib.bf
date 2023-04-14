@@ -6,6 +6,7 @@ namespace Raylib
 {
 	static
 	{
+		public const char8* RLGL_VERSION = "4.5";
 		public const char8* RAYLIB_VERSION = "4.5.0";
 
 		public const float DEG2RAD = Math.PI_f / 180.0f;
