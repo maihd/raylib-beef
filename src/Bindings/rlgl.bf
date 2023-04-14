@@ -296,7 +296,7 @@ namespace Raylib
 	#if BF_PLATFORM_WINDOWS || BF_PLATFORM_LINUX || BF_PLATFORM_MACOS
 	    public uint32* 		indices;      		// Vertex indices (in case vertex data comes indexed) (6 indices per quad)
 	#endif
-	#if BF_PLATFORM_ANDROID || BF_PLATFORM_WEB || BF_PLATFORM_IOS
+	#if BF_PLATFORM_ANDROID || BF_PLATFORM_WASM || BF_PLATFORM_IOS
 	    public uint16* 		indices;    		// Vertex indices (in case vertex data comes indexed) (6 indices per quad)
 	#endif
 	    public uint32 		vaoId;         		// OpenGL Vertex Array Object id

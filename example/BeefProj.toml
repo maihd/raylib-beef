@@ -3,5 +3,36 @@ Dependencies = {corlib = "*", raylib-beef = "*"}
 
 [Project]
 Name = "example"
+TargetType = "BeefLib"
 StartupObject = "raylib_beef_example.Program"
 DefaultNamespace = "raylib_beef_example"
+
+[Configs.Debug.wasm32]
+BeefLibType = "Static"
+
+[Configs.Debug.android]
+BuildKind = "DynamicLib"
+
+[Configs.Debug.android64]
+BuildKind = "DynamicLib"
+
+[Configs.Release.wasm32]
+LTOType = "None"
+
+[Configs.Release.android]
+BuildKind = "DynamicLib"
+
+[Configs.Release.android64]
+BuildKind = "DynamicLib"
+
+[Configs.Paranoid.android]
+BuildKind = "DynamicLib"
+
+[Configs.Paranoid.android64]
+BuildKind = "DynamicLib"
+
+[Configs.Test.android64]
+BuildKind = "DynamicLib"
+
+[Configs.Test.android]
+BuildKind = "DynamicLib"

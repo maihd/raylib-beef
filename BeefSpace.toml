@@ -1,6 +1,15 @@
 FileVersion = 1
 Projects = {raylib-beef = {Path = "."}, example = {Path = "example"}}
-ExtraPlatforms = ["wasm32"]
+ExtraPlatforms = ["android", "android64"]
 
 [Workspace]
 StartupProject = "example"
+
+[Configs.Release.wasm32]
+LTOType = "None"
+AllocType = "JEMalloc"
+
+[Configs.Debug.wasm32]
+AllocType = "CRT"
+EnableObjectDebugFlags = false
+EmitObjectAccessCheck = false

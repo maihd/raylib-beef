@@ -56,7 +56,7 @@ public class RaylibApp
 		Init();
 
 #if BF_PLATFORM_WASM
-		emscripten_set_main_loop(=> EmscriptenMainLoop, FPS, 1);
+		emscripten_set_main_loop(=> EmscriptenMainLoop, fps, 1);
 #else
 		defer Close();
 		while (RunOneFrame()) {}
