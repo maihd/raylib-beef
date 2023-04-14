@@ -2,6 +2,7 @@ using System;
 
 namespace Raylib
 {
+	// VrStereoConfig, VR stereo rendering configuration for simulator
 	[CRepr]
 	struct VrStereoConfig
 	{

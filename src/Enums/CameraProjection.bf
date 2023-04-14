@@ -1,8 +1,9 @@
-using System.Interop;
+using System;
 
 namespace Raylib
 {
-	public enum CameraType : c_int
+	// Camera projection
+	public enum CameraProjection : int32
 	{
 		CAMERA_PERSPECTIVE = 0,
 		CAMERA_ORTHOGRAPHIC

@@ -32,15 +32,15 @@ namespace Raylib
 
 		[CLink]
 		/// Load font data for further use
-		public static extern CharInfo* LoadFontData(uint8* filedata, c_int datasize, c_int fontSize, c_int* fontChars, c_int charsCount, FontType type);
+		public static extern GlyphInfo* LoadFontData(uint8* filedata, c_int datasize, c_int fontSize, c_int* fontChars, c_int charsCount, FontType type);
 
 		[CLink]
 		/// Generate image font atlas using chars info
-		public static extern Image GenImageFontAtlas(CharInfo* chars, Rectangle** recs, c_int charsCount, c_int fontSize, c_int padding, c_int packMethod);
+		public static extern Image GenImageFontAtlas(GlyphInfo* chars, Rectangle** recs, c_int charsCount, c_int fontSize, c_int padding, c_int packMethod);
 
 		[CLink]
 		/// Unload font chars info data (RAM)
-		public static extern void UnloadFontData(CharInfo *chars, int charsCount);  
+		public static extern void UnloadFontData(GlyphInfo *chars, int charsCount);  
 
 		[CLink]
 		/// Unload Font from GPU memory (VRAM)
