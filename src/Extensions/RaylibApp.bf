@@ -7,10 +7,11 @@ public class RaylibApp
 {
 	private static Self gApp;
 
-	public String 	title;
-	public int32	width;
-	public int32	height;
-	public int32	fps = 60;
+	public String 		title;
+	public int32		width;
+	public int32		height;
+	public ConfigFlags	config;
+	public int32		fps = 60;
 
 	public this()
 	{
@@ -29,6 +30,11 @@ public class RaylibApp
 		InitWindow(width, height, title.CStr());
 		InitAudioDevice();
 		SetTargetFPS(fps);
+
+		if (config != 0)
+		{
+			SetConfigFlags(config);
+		}
 	}
 
 	public virtual void Close()
