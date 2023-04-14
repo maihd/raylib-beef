@@ -10,20 +10,5 @@ namespace Raylib
 		public float y;			// Rectangle top-left corner position y
 		public float width;		// Rectangle width
 		public float height;	// Rectangle height
-
-		[Inline]
-		public this()
-		{
-			this = default;
-		}
-		
-		[Inline]
-		public this(float x, float y, float width, float height)
-		{
-			this.x = x;
-			this.y = y;
-			this.width = width;
-			this.height = height;
-		}
 	}
 }
