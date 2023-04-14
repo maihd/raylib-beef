@@ -60,19 +60,3 @@ OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROW
 [Configs.Release.wasm32]
 LibPaths = ["$(ProjectDir)/dist/wasm32/libraylib.a"]
 OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1"
-
-[Configs.Debug.android]
-LibPaths = ["$(ProjectDir)/dist/anrdoid_arm/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags)"
-
-[Configs.Release.android]
-LibPaths = ["$(ProjectDir)/dist/anrdoid_arm/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags)"
-
-[Configs.Debug.android64]
-LibPaths = ["$(ProjectDir)/dist/anrdoid_arm64/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags)"
-
-[Configs.Release.android64]
-LibPaths = ["$(ProjectDir)/dist/anrdoid_arm64/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags)"

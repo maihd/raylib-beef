@@ -1,6 +1,6 @@
 FileVersion = 1
 Projects = {raylib-beef = {Path = "."}, example = {Path = "example"}}
-ExtraPlatforms = ["android", "android64"]
+ExtraPlatforms = []
 
 [Workspace]
 StartupProject = "example"
