@@ -2,18 +2,27 @@ using System;
 
 namespace Raylib
 {
+	// Vector2, 2 components
 	[CRepr]
 	public struct Vector2
 	{
-		public float x;
-		public float y;
+		public float x;	// Vector x component
+		public float y;	// Vector y component
 
+		[Inline]
+		public this()
+		{
+			this = default;
+		}
+
+		[Inline]
 		public this(float x, float y)
 		{
 			this.x = x;
 			this.y = y;
 		}
 
+		[Inline]
 		public this(float value)
 		{
 			this.x = value;

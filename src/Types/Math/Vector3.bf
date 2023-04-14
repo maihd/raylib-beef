@@ -2,13 +2,15 @@ using System;
 
 namespace Raylib
 {
+	// Vector3, 3 components
 	[CRepr]
 	public struct Vector3
 	{
-		public float x;
-		public float y;
-		public float z;
+		public float x;	// Vector x component
+		public float y;	// Vector y component
+		public float z;	// Vector z component
 
+		[Inline]
 		public this(float x, float y, float z)
 		{
 			this.x = x;
@@ -16,6 +18,7 @@ namespace Raylib
 			this.z = z;
 		}
 
+		[Inline]
 		public this(float value)
 		{
 			this.x = value;
@@ -23,6 +26,7 @@ namespace Raylib
 			this.z = value;
 		}
 
+		[Inline]
 		public this()
 		{
 			this = default;

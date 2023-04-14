@@ -283,17 +283,24 @@ namespace Raylib
 		/// Detect collision between ray and box
 		public static extern bool CheckCollisionRayBox(Ray ray, BoundingBox @box);
 
+		// Get collision info between ray and sphere
 		[CLink]
-		/// Get collision info between ray and model
-		public static extern RayHitInfo GetCollisionRayModel(Ray ray, Model model);
+		public static extern RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, float radius);
 
+		// Get collision info between ray and box
 		[CLink]
-		/// Get collision info between ray and triangle
-		public static extern RayHitInfo GetCollisionRayTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3);
+		public static extern RayCollision GetRayCollisionBox(Ray ray, BoundingBox @box);                                 
 
+		// Get collision info between ray and mesh
 		[CLink]
-		/// Get collision info between ray and ground plane (Y-normal plane)
-		public static extern RayHitInfo GetCollisionRayGround(Ray ray, float groundHeight);
+		public static extern RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform);                       
 
+		// Get collision info between ray and triangle
+		[CLink]
+		public static extern RayCollision GetRayCollisionTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3);            
+
+		// Get collision info between ray and quad
+		[CLink]
+		public static extern RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4);    
 	}
 }

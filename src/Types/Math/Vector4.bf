@@ -2,14 +2,16 @@ using System;
 
 namespace Raylib
 {
+	// Vector4, 4 components
 	[CRepr]
 	public struct Vector4
 	{
-		public float x;
-		public float y;
-		public float z;
-		public float w;
+		public float x;	// Vector x component
+		public float y;	// Vector y component
+		public float z;	// Vector z component
+		public float w;	// Vector w component
 
+		[Inline]
 		public this(float x, float y, float z, float w)
 		{
 			this.x = x;
@@ -18,12 +20,19 @@ namespace Raylib
 			this.w = w;
 		}
 
+		[Inline]
 		public this(float value)
 		{
 			x = value;
 			y = value;
 			z = value;
 			w = value;
+		}
+
+		[Inline]
+		public this()
+		{
+			this = default;
 		}
 
 		[Inline]

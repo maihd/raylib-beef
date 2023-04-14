@@ -1,7 +1,8 @@
 using System;
+
 namespace Raylib
 {
-	// Matrix type (OpenGL style 4x4 - right handed, column major)
+	// Matrix, 4x4 components, column major, OpenGL style, right-handed
 	[CRepr]
 	public struct Matrix
 		: this(
@@ -36,6 +37,12 @@ namespace Raylib
 
 			return m;
 		}*/
+
+		[Inline]
+		public this()
+		{
+			this = default;
+		}
 
 		[Inline]
 		public this(float s)
