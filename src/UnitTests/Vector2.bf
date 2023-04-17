@@ -1,4 +1,4 @@
-namespace Raylib.Tests;
+namespace Raylib.UnitTests;
 
 using System;
 using Raylib;
@@ -6,7 +6,7 @@ using Raylib;
 static
 {
     [Test]
-    public static void TestVector2Add()
+    static void TestVector2Add()
     {
 		let a = Vector2(1.0f, 2.0f);
 		let b = Vector2(3.0f, 4.0f);
@@ -16,7 +16,7 @@ static
     }
 
     [Test]
-    public static void TestVector2Sub()
+    static void TestVector2Sub()
     {
 		let a = Vector2(1.0f, 2.0f);
 		let b = Vector2(3.0f, 4.0f);
@@ -26,7 +26,7 @@ static
     }
 
     [Test]
-    public static void TestVector2Mul()
+    static void TestVector2Mul()
     {
 		let a = Vector2(1.0f, 2.0f);
 		let b = Vector2(3.0f, 4.0f);
@@ -36,7 +36,7 @@ static
     }
 
     [Test]
-    public static void TestVector2Div()
+    static void TestVector2Div()
     {
 		let a = Vector2(1.0f, 2.0f);
 		let b = Vector2(3.0f, 4.0f);
