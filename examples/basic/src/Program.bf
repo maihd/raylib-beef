@@ -1,6 +1,4 @@
-namespace raylib_beef_example;
-
-using Raylib;
+namespace Raylib.Examples.Basic;
 
 class Program : RaylibApp
 {

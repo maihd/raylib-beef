@@ -2,7 +2,7 @@ FileVersion = 1
 Dependencies = {corlib = "*", corlib = "*", corlib = "*"}
 
 [Project]
-Name = "raylib-beef"
+Name = "Raylib"
 TargetType = "BeefLib"
 StartupObject = "Program"
 DefaultNamespace = "Raylib"

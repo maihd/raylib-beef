@@ -1,6 +1,7 @@
 FileVersion = 1
-Projects = {raylib-beef = {Path = "."}, example = {Path = "example"}}
+Projects = {Raylib = {Path = "."}, Basic = {Path = "examples/basic"}}
+WorkspaceFolders = {Examples = ["Basic"]}
 ExtraPlatforms = ["wasm32"]
 
 [Workspace]
-StartupProject = "example"
+StartupProject = "Basic"
