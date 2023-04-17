@@ -1,7 +1,16 @@
 FileVersion = 1
 Projects = {Raylib = {Path = "."}, Basic = {Path = "examples/basic"}}
 WorkspaceFolders = {Examples = ["Basic"]}
-ExtraPlatforms = ["wasm32"]
 
 [Workspace]
 StartupProject = "Basic"
+
+[Configs.Debug.wasm32]
+AllocType = "CRT"
+EnableObjectDebugFlags = false
+EmitObjectAccessCheck = false
+
+[Configs.Test.wasm32]
+AllocType = "CRT"
+EnableObjectDebugFlags = false
+EmitObjectAccessCheck = false
