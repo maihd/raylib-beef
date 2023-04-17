@@ -9,6 +9,7 @@ class Program : RaylibApp
  		app.title = scope .("Raylib Beef Example");
 		app.width = 800;
 		app.height = 600;
+		app.config = .FLAG_VSYNC_HINT;
 		app.Run();
 	}
 

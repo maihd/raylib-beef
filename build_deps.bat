@@ -24,7 +24,7 @@ set RAYLIB_DLL_FLAGS=%RAYLIB_FLAGS% -DBUILD_SHARED_LIBS=ON -DSHARED=1
 @REM %CMAKE% ../deps/raylib -A Win32 -DCUSTOMIZE_BUILD=ON %RAYLIB_FLAGS%
 @REM %CMAKE% --build . --target raylib --config Release -- /nologo /maxcpucount
 
-popd
+@REM popd
 
 : Build raylib static library for x64
 

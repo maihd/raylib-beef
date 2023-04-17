@@ -24,7 +24,7 @@ namespace Raylib
 		[CLink]
 		/// Setup
 		// window configuration flags (view FLAGS)
-		public static extern void SetConfigFlags(ConfigFlag flags);
+		public static extern void SetConfigFlags(ConfigFlags flags);
 
 		[CLink]
 		/// Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR)
