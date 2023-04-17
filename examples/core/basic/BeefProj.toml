@@ -1,7 +1,7 @@
 FileVersion = 1
-Dependencies = {corlib = "*", Raylib = "*"}
+Dependencies = {corlib = "*", Raylib = "*", corlib = "*"}
 
 [Project]
 Name = "BasicWindow"
-StartupObject = "Raylib.Examples.Basic.Program"
-DefaultNamespace = "Raylib.Examples.Basic"
+StartupObject = "Raylib.Examples.BasicWindow.Program"
+DefaultNamespace = "Raylib.Examples.BasicWindow"
