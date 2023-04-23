@@ -1,9 +1,9 @@
 FileVersion = 1
-Projects = {Raylib = {Path = "."}, BasicWindow = {Path = "examples/core/basic"}}
-WorkspaceFolders = {Examples = [], "Examples/Core" = ["BasicWindow"]}
+Projects = {Raylib = {Path = "."}, BasicWindow = {Path = "examples/core/basic"}, InputKeys = {Path = "examples/core/input_keys"}}
+WorkspaceFolders = {Examples = [], "Examples/Core" = ["BasicWindow", "InputKeys"]}
 
 [Workspace]
-StartupProject = "BasicWindow"
+StartupProject = "InputKeys"
 
 [Configs.Debug.wasm32]
 AllocType = "CRT"

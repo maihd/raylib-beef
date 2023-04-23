@@ -1,0 +1,7 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Raylib = "*"}
+
+[Project]
+Name = "InputKeys"
+StartupObject = "Raylib.Examples.Core.InputKeys.Program"
+DefaultNamespace = "Raylib.Examples.Core."
