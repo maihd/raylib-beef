@@ -5,3 +5,6 @@ Dependencies = {corlib = "*", Raylib = "*", corlib = "*"}
 Name = "BasicWindow"
 StartupObject = "Raylib.Examples.BasicWindow.Program"
 DefaultNamespace = "Raylib.Examples.BasicWindow"
+
+[Configs.Debug.wasm32]
+OtherLinkFlags = "$(LinkFlags) -s INITIAL_MEMORY=671088640 -s ALLOW_MEMORY_GROWTH=1"

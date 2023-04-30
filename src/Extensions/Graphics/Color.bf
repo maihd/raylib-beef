@@ -6,32 +6,32 @@ namespace Raylib
 	{
 		// Example - Color.RED instead of RED
 		// Custom raylib color palette for amazing visuals
-		public static Color LIGHTGRAY = Color(200, 200, 200, 255);
-		public static Color GRAY = Color(130, 130, 130, 255);
-		public static Color DARKGRAY = Color(80, 80, 80, 255);
-		public static Color YELLOW = Color(253, 249, 0, 255);
-		public static Color GOLD = Color(255, 203, 0, 255);
-		public static Color ORANGE = Color(255, 161, 0, 255);
-		public static Color PINK = Color(255, 109, 194, 255);
-		public static Color RED = Color(230, 41, 55, 255);
-		public static Color MAROON = Color(190, 33, 55, 255);
-		public static Color GREEN = Color(0, 228, 48, 255);
-		public static Color LIME = Color(0, 158, 47, 255);
-		public static Color DARKGREEN = Color(0, 117, 44, 255);
-		public static Color SKYBLUE = Color(102, 191, 255, 255);
-		public static Color BLUE = Color(0, 121, 241, 255);
-		public static Color DARKBLUE = Color(0, 82, 172, 255);
-		public static Color PURPLE = Color(200, 122, 255, 255);
-		public static Color VIOLET = Color(135, 60, 190, 255);
-		public static Color DARKPURPLE = Color(112, 31, 126, 255);
-		public static Color BEIGE = Color(211, 176, 131, 255);
-		public static Color BROWN = Color(127, 106, 79, 255);
-		public static Color DARKBROWN = Color(76, 63, 47, 255);
-		public static Color WHITE = Color(255, 255, 255, 255);
-		public static Color BLACK = Color(0, 0, 0, 255);
-		public static Color BLANK = Color(0, 0, 0, 0);
-		public static Color MAGENTA = Color(255, 0, 255, 255);
-		public static Color RAYWHITE = Color(245, 245, 245, 255);
+		public const Color LIGHTGRAY 	= Color(200, 200, 200, 255);
+		public const Color GRAY 		= Color(130, 130, 130, 255);
+		public const Color DARKGRAY 	= Color( 80,  80,  80, 255);
+		public const Color YELLOW 		= Color(253, 249,   0, 255);
+		public const Color GOLD 		= Color(255, 203,   0, 255);
+		public const Color ORANGE 		= Color(255, 161,   0, 255);
+		public const Color PINK 		= Color(255, 109, 194, 255);
+		public const Color RED 			= Color(230,  41,  55, 255);
+		public const Color MAROON 		= Color(190,  33,  55, 255);
+		public const Color GREEN 		= Color(  0, 228,  48, 255);
+		public const Color LIME 		= Color(  0, 158,  47, 255);
+		public const Color DARKGREEN 	= Color(  0, 117,  44, 255);
+		public const Color SKYBLUE 		= Color(102, 191, 255, 255);
+		public const Color BLUE 		= Color(  0, 121, 241, 255);
+		public const Color DARKBLUE 	= Color(  0,  82, 172, 255);
+		public const Color PURPLE 		= Color(200, 122, 255, 255);
+		public const Color VIOLET 		= Color(135,  60, 190, 255);
+		public const Color DARKPURPLE 	= Color(112,  31, 126, 255);
+		public const Color BEIGE 		= Color(211, 176, 131, 255);
+		public const Color BROWN 		= Color(127, 106,  79, 255);
+		public const Color DARKBROWN 	= Color( 76,  63,  47, 255);
+		public const Color WHITE 		= Color(255, 255, 255, 255);
+		public const Color BLACK 		= Color(  0,   0,   0, 255);
+		public const Color BLANK 		= Color(  0,   0,   0,   0);
+		public const Color MAGENTA 		= Color(255,   0, 255, 255);
+		public const Color RAYWHITE 	= Color(245, 245, 245, 255);
 
 		public static Color operator+(Color a, Color b)
 		{

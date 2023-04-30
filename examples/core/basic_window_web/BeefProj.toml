@@ -1,0 +1,7 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Raylib = "*"}
+
+[Project]
+Name = "BasicWindowWeb"
+StartupObject = "Raylib.Examples.Core.BasicWindowWeb.Program"
+DefaultNamespace = "Raylib.Examples.Core.BasicWindowWeb"

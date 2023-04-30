@@ -5,23 +5,6 @@ Dependencies = {corlib = "*", corlib = "*", corlib = "*"}
 Name = "Raylib"
 TargetType = "BeefLib"
 StartupObject = "Program"
-DefaultNamespace = "Raylib"
-
-# [Configs.DebugStatic.Win64]
-# OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-# LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
-
-# [Configs.DebugStatic.Win32]
-# OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-# LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
-
-# [Configs.ReleaseStatic.Win64]
-# OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-# LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
-
-# [Configs.ReleaseStatic.Win32]
-# OtherLinkFlags = "$(LinkFlags) $(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\" opengl32.lib kernel32.lib user32.lib gdi32.lib winmm.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib"
-# LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 
 [Configs.Test.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
@@ -43,6 +26,10 @@ OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win32/\""
 LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
 
+[Configs.Release.wasm32]
+OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1"
+LibPaths = ["$(ProjectDir)/dist/wasm32/libraylib.a"]
+
 [Configs.Debug.Win64]
 OtherLinkFlags = "$(LinkFlags) -libpath:\"$(ProjectDir)/dist/win64/\""
 LibPaths = ["$(ProjectDir)/dist/win64/raylib.lib"]
@@ -54,9 +41,5 @@ LibPaths = ["$(ProjectDir)/dist/win32/raylib.lib"]
 PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/win32/*.dll\")"]
 
 [Configs.Debug.wasm32]
+OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 --use-preload-plugins -s ALLOW_MEMORY_GROWTH=1 -s ASSERTIONS=1 -s SAFE_HEAP=0 -s DETERMINISTIC=1 -s ASYNCIFY"
 LibPaths = ["$(ProjectDir)/dist/wasm32/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1"
-
-[Configs.Release.wasm32]
-LibPaths = ["$(ProjectDir)/dist/wasm32/libraylib.a"]
-OtherLinkFlags = "$(LinkFlags) -g -s USE_GLFW=3 -s ASYNCIFY -s ALLOW_MEMORY_GROWTH=1"
