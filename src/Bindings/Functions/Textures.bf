@@ -17,7 +17,7 @@ namespace Raylib
 
 		[CLink]
 		/// Load image sequence from file (frames appended to image.data)
-		public static extern Image LoadImageAnim(char8* fileName, int* frames);
+		public static extern Image LoadImageAnim(char8* fileName, out c_int frames);
 
 		[CLink]
 		/// Load image from memory buffer, fileType refers to extension: i.e. "png"
