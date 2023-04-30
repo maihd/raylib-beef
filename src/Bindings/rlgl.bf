@@ -322,6 +322,7 @@ namespace Raylib
 	}
 
 	// rlRenderBatch type
+	[CRepr]
 	struct rlRenderBatch
 	{
 	    public int32 			bufferCount;        // Number of vertex buffers (multi-buffering support)

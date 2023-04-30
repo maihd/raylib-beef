@@ -17,6 +17,5 @@ namespace Raylib
 		public int32 		height;		// Texture base height
 		public int32 		mipmaps;	// Mipmap levels, 1 by default
 		public PixelFormat 	format;		// Data format (PixelFormat type)
-
 	}
 }
