@@ -1188,18 +1188,18 @@ static
 	//----------------------------------------------------------------------------------
 	// Module specific Functions Declaration
 	//----------------------------------------------------------------------------------
-	static int GetTextWidth(char8* text);                      // Gui get text width using default font
-	static Rectangle GetTextBounds(int control, Rectangle bounds);  // Get text bounds considering control bounds
-	static char8* GetTextIcon(char8* text, int *iconId);  // Get text icon if provided and move text cursor
+	//static int GetTextWidth(char8* text);                      // Gui get text width using default font
+	//static Rectangle GetTextBounds(int control, Rectangle bounds);  // Get text bounds considering control bounds
+	//static char8* GetTextIcon(char8* text, int *iconId);  // Get text icon if provided and move text cursor
 	
-	static void GuiDrawText(char8* text, Rectangle bounds, int alignment, Color tint);         // Gui draw text using default font
-	static void GuiDrawRectangle(Rectangle rec, int borderWidth, Color borderColor, Color color);   // Gui draw rectangle using default raygui style
+	//static void GuiDrawText(char8* text, Rectangle bounds, int alignment, Color tint);         // Gui draw text using default font
+	//static void GuiDrawRectangle(Rectangle rec, int borderWidth, Color borderColor, Color color);   // Gui draw rectangle using default raygui style
 	
-	static char8* *GuiTextSplit(char8* text, int *count, int *textRow);       // Split controls text into multiple strings
-	static Vector3 ConvertHSVtoRGB(Vector3 hsv);                    // Convert color data from HSV to RGB
-	static Vector3 ConvertRGBtoHSV(Vector3 rgb);                    // Convert color data from RGB to HSV
+	//static char8* *GuiTextSplit(char8* text, int *count, int *textRow);       // Split controls text into multiple strings
+	//static Vector3 ConvertHSVtoRGB(Vector3 hsv);                    // Convert color data from HSV to RGB
+	//static Vector3 ConvertRGBtoHSV(Vector3 rgb);                    // Convert color data from RGB to HSV
 	
-	static int GuiScrollBar(Rectangle bounds, int value, int minValue, int maxValue);   // Scroll bar control, used by GuiScrollPanel()
+	//static int GuiScrollBar(Rectangle bounds, int value, int minValue, int maxValue);   // Scroll bar control, used by GuiScrollPanel()
 
 	//----------------------------------------------------------------------------------
 	// Gui Setup Functions Definition
@@ -1276,7 +1276,7 @@ static
 	        if (!guiStyleLoaded) GuiLoadStyleDefault();
 	
 	        guiFont = font;
-	        GuiSetStyle(DEFAULT, TEXT_SIZE, font.baseSize);
+	        GuiSetStyle(.DEFAULT, (.)GuiDefaultProperty.TEXT_SIZE, font.baseSize);
 	    }
 	}
 
@@ -1299,11 +1299,26 @@ static
 	    }
 	}
 
+	public static void GuiSetStyle(GuiControl control, GuiControlProperty property, int value)
+	{
+		GuiSetStyle(control.Underlying, property.Underlying, value);
+	}
+
+	public static void GuiSetStyle(GuiControl control, GuiControlProperty property, GuiTextAlignment value)
+	{
+		GuiSetStyle(control.Underlying, property.Underlying, value.Underlying);
+	}
+
 	// Get control style property value
 	public static int GuiGetStyle(int control, int property)
 	{
 	    if (!guiStyleLoaded) GuiLoadStyleDefault();
 	    return guiStyle[control*(RAYGUI_MAX_PROPS_BASE + RAYGUI_MAX_PROPS_EXTENDED) + property];
+	}
+
+	public static int GuiGetStyle(GuiControl control, GuiControlProperty property)
+	{
+		return GuiGetStyle(control.Underlying, property.Underlying);
 	}
 
 	//----------------------------------------------------------------------------------
@@ -1339,20 +1354,20 @@ static
 	    // Draw control
 	    //--------------------------------------------------------------------
 	    GuiStatusBar(statusBar, title); // Draw window header as status bar
-	    GuiPanel(windowPanel, NULL);    // Draw window base
+	    GuiPanel(windowPanel, null);    // Draw window base
 	
 	    // Draw window close button
-	    int tempBorderWidth = GuiGetStyle(BUTTON, BORDER_WIDTH);
-	    int tempTextAlignment = GuiGetStyle(BUTTON, TEXT_ALIGNMENT);
-	    GuiSetStyle(BUTTON, BORDER_WIDTH, 1);
-	    GuiSetStyle(BUTTON, TEXT_ALIGNMENT, TEXT_ALIGN_CENTER);
+	    int tempBorderWidth = GuiGetStyle(.BUTTON, .BORDER_WIDTH);
+	    int tempTextAlignment = GuiGetStyle(.BUTTON, .TEXT_ALIGNMENT);
+	    GuiSetStyle(.BUTTON, .BORDER_WIDTH, 1);
+	    GuiSetStyle(.BUTTON, .TEXT_ALIGNMENT, .TEXT_ALIGN_CENTER);
 	#if RAYGUI_NO_ICONS
 	    clicked = GuiButton(closeButtonRec, "x");
 	#else
-	    clicked = GuiButton(closeButtonRec, GuiIconText(ICON_CROSS_SMALL, NULL));
+	    clicked = GuiButton(closeButtonRec, GuiIconText(.ICON_CROSS_SMALL, null));
 	#endif
-	    GuiSetStyle(BUTTON, BORDER_WIDTH, tempBorderWidth);
-	    GuiSetStyle(BUTTON, TEXT_ALIGNMENT, tempTextAlignment);
+	    GuiSetStyle(.BUTTON, .BORDER_WIDTH, tempBorderWidth);
+	    GuiSetStyle(.BUTTON, .TEXT_ALIGNMENT, tempTextAlignment);
 	    //--------------------------------------------------------------------
 	
 	    return clicked;
@@ -1361,9 +1376,7 @@ static
 	// Group Box control with text name
 	public static void GuiGroupBox(Rectangle bounds, char8* text)
 	{
-	    #if !defined(RAYGUI_GROUPBOX_LINE_THICK)
-	        #define RAYGUI_GROUPBOX_LINE_THICK     1
-	    #endif
+	    const int32 RAYGUI_GROUPBOX_LINE_THICK = 1;
 	
 	    GuiState state = guiState;
 	
@@ -1380,16 +1393,12 @@ static
 	// Line control
 	public static void GuiLine(Rectangle bounds, char8* text)
 	{
-	    #if !defined(RAYGUI_LINE_ORIGIN_SIZE)
-	        #define RAYGUI_LINE_MARGIN_TEXT  12
-	    #endif
-	    #if !defined(RAYGUI_LINE_TEXT_PADDING)
-	        #define RAYGUI_LINE_TEXT_PADDING  4
-	    #endif
+		const int32 RAYGUI_LINE_MARGIN_TEXT = 12;
+		const int32 RAYGUI_LINE_TEXT_PADDING = 4;
 	
 	    GuiState state = guiState;
 	
-	    Color color = Fade(GetColor(GuiGetStyle(DEFAULT, (state == STATE_DISABLED)? BORDER_COLOR_DISABLED : LINE_COLOR)), guiAlpha);
+	    Color color = Fade(GetColor((.)GuiGetStyle(DEFAULT, (state == .STATE_DISABLED)? .BORDER_COLOR_DISABLED : .LINE_COLOR)), guiAlpha);
 	
 	    // Draw control
 	    //--------------------------------------------------------------------
@@ -3787,6 +3796,11 @@ static
 	        return iconBuffer;
 	    }
 	#endif
+	}
+
+	public static char8* GuiIconText(GuiIconName iconId, char8* text)
+	{
+		return GuiIconText(iconId.Underlying, text);
 	}
 
 #if !RAYGUI_NO_ICONS
