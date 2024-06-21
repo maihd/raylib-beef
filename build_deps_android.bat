@@ -1,8 +1,9 @@
 @echo off
 
 : Get raylib source code
-
-git clone https://github.com/raysan5/raylib --depth 1 --branch 4.5.0 deps/raylib
+if not exist deps\raylib (
+    git clone https://github.com/raysan5/raylib --depth 1 --branch 5.0 deps/raylib
+)
 
 : CMake variables
 
@@ -10,7 +11,9 @@ if not defined MAKE (
     set MAKE=make
 )
 
-set ANDROID_NDK=C:\Android\ndk\21.4.7075529
+if not defined ANDROID_NDK (
+    set ANDROID_NDK=C:\Android\ndk\21.4.7075529
+)
 
 pushd deps\raylib\src
 

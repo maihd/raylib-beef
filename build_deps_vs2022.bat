@@ -1,6 +1,8 @@
 @echo off
 
-git clone https://github.com/raysan5/raylib --depth 1 --branch 4.5.0 deps/raylib
+if not exist deps\raylib (
+    git clone https://github.com/raysan5/raylib --depth 1 --branch 5.0 deps/raylib
+)
 
 if not defined VISUAL_STUDIO_VERSION (
     set VISUAL_STUDIO_VERSION=2022

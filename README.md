@@ -2,7 +2,7 @@
 
 <img align="left" src="https://github.com/M0n7y5/raylib-beef/raw/master/img/raylib-beef-logo.png" width="256px">
 
-**raylib-beef** is a Beef wrapper library and Beefie Version for **Raylib 4.2.0**, a simple and easy-to-use library. In combination with the benefits of the Beef programming language, making games is pure satisfaction!
+**raylib-beef** is a Beef wrapper library and Beefie Version for **Raylib 5.0**, a simple and easy-to-use library. In combination with the benefits of the Beef programming language, making games is pure satisfaction!
 
 > **Attention!** These bindings are still in development. Bugs may occur.
 	You can download this library with binaries from the [Release page](https://github.com/M0n7y5/raylib-beef/releases)!

@@ -1,10 +1,17 @@
 @echo off
 
 : Get raylib source code
-
-git clone https://github.com/raysan5/raylib --depth 1 --branch 4.5.0 deps/raylib
+if not exist deps\raylib (
+    git clone https://github.com/raysan5/raylib --depth 1 --branch 5.0 deps/raylib
+)
 
 : Build raylib for Web
+
+where emcc
+if not %ErrorLevel% equ 0 (
+    echo Emscripten is not installed or not active in current terminal environment
+    goto :End:
+)
 
 pushd deps\raylib\src
 
@@ -32,3 +39,5 @@ if not exist dist\wasm32 (
 
 copy .\deps\raylib\LICENSE .\dist\LICENSE
 copy .\deps\raylib\src\libraylib.a .\dist\wasm32\libraylib.a
+
+:End:
