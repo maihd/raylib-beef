@@ -2,6 +2,7 @@ using System;
 
 namespace Raylib
 {
+    [Swizzle(4, HasColor=true, HasVector=false)]
 	public extension Color
 	{
 		// Example - Color.RED instead of RED
@@ -51,7 +52,7 @@ namespace Raylib
 				a.a + (.)(255 * b));
 		}
 
-		public this(uint8 r, uint8 g, uint8 b, uint8 a)
+		public this(uint8 r, uint8 g, uint8 b, uint8 a = 255)
 		{
 			this.r = r;
 			this.g = g;

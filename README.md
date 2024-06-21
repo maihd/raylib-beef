@@ -19,19 +19,22 @@
 ## What is done
 - Bindings for:
     - raylib.h
-    - raymath.h 
+    - raymath.h (with swizzle support)
     - rlgl.h (partly)
 	- Easings.h
 
 ## Important notes
-- there are no bindings for text manipulating methods
+- There are no bindings for text manipulating methods
 	- Beef already has custom methods for text manupulation
--  rlgl bindings are **partly done**
+- rlgl bindings are **partly done**
 - Add `-sUSE_GLFW=3` on wasm32 target
 
 ## TODO:
 - Rewrite examples in Beef
-- finish rlgl.h bindings
+- Finish rlgl.h bindings
+- Extensions for user using raylib functions with Beef standard library
+- Extensions for more ergonomic game development
+- Use this project as based/starter project for gamedev with Beef
 
 # Quick Start *(using Beef IDE)*
 1. **Download** raylib-beef.zip **FROM RELEASE PAGE** and extract raylib-beef folder from that zip file to: **C:\Program Files\BeefLang\BeefLibs**

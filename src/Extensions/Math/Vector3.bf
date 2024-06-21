@@ -2,6 +2,7 @@ using System;
 
 namespace Raylib
 {
+    [Swizzle(3, HasColor=true)]
 	public extension Vector3
 	{
 		[Inline]
