@@ -34,16 +34,19 @@ namespace Raylib
 		public const Color MAGENTA 		= Color(255,   0, 255, 255);
 		public const Color RAYWHITE 	= Color(245, 245, 245, 255);
 
+		[Inline]
 		public static Color operator+(Color a, Color b)
 		{
 			return .(a.r + b.r, a.g + b.g, a.b + b.b, a.a + b.a);
 		}
 
+		[Inline]
 		public static Color operator-(Color a, Color b)
 		{
 			return .((.)a.r - b.r, (.)a.g - b.g, (.)a.b - b.b, (.)a.a - b.a);
 		}
 
+		[Inline]
 		public static Color operator*(Color a, float b)
 		{
 			return .(a.r + (.)(255 * b),
@@ -52,6 +55,7 @@ namespace Raylib
 				a.a + (.)(255 * b));
 		}
 
+		[Inline]
 		public this(uint8 r, uint8 g, uint8 b, uint8 a = 255)
 		{
 			this.r = r;
@@ -60,6 +64,7 @@ namespace Raylib
 			this.a = a;
 		}
 
+		[Inline]
 		public static Color LerpRGB(Color a, Color b, float t)
 		{
 			return Color
@@ -71,6 +76,7 @@ namespace Raylib
 				);
 		}
 
+		[Inline]
 		public static Color LerpBlend(Color color, Color color2, float param)
 		{
 			return ColorAlphaBlend(color, color2, ColorAlpha(.WHITE, param));
