@@ -3,6 +3,7 @@ namespace Raylib;
 using System;
 using System.Reflection;
 
+[AttributeUsage(.Struct)]
 public struct SwizzleAttribute : this(int Size, bool HasColor = false, bool HasVector = true), Attribute, IOnTypeInit
 {
     private static readonly let VectorTypeNames = String[?]("float", "Vector2", "Vector3", "Vector4");
