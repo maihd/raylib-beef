@@ -32,9 +32,19 @@
 ## TODO:
 - Rewrite examples in Beef
 - Finish rlgl.h bindings
+- Add raygui
+- Distinct Quaternion from Vector4 (in Beef we have convert operator, so distinct type make better programming experience)
 - Extensions for user using raylib functions with Beef standard library
+	- `StringView` instead of `char8*`
+	- `Span<T>` instead of `(int count, T* array)`
 - Extensions for more ergonomic game development
+	- ref/out prefer over pointer
+	- PascalCase enum members + no prefix (prefix is redundant, ALL_CASES for enum members is not idiom in Beef)
+	- Typed shader uniform/attribute value
+	- Variable argument count instead of C variadic
+	- Type related functions. Donot remove function bindings. 
 - Use this project as based/starter project for gamedev with Beef
+	- See [beef-gamedev](https://github.com/maihd/beef-gamedev)
 
 # Quick Start *(using Beef IDE)*
 1. **Download** raylib-beef.zip **FROM RELEASE PAGE** and extract raylib-beef folder from that zip file to: **C:\Program Files\BeefLang\BeefLibs**

@@ -3,7 +3,7 @@ namespace Raylib;
 using System;
 using System.Diagnostics;
 
-public class RaylibApp
+public abstract class RaylibApp
 {
 	private static Self gApp;
 
@@ -25,7 +25,7 @@ public class RaylibApp
 		gApp = null;
 	}
 
-	public virtual void Init()
+	private void InternalInit()
 	{
 		InitWindow(width, height, title.CStr());
 		InitAudioDevice();
@@ -35,30 +35,26 @@ public class RaylibApp
 		{
 			SetConfigFlags(config);
 		}
+
+		Init();
 	}
 
-	public virtual void Close()
+	private void InternalClose()
 	{
+		Close();
+
 		CloseAudioDevice();
 		CloseWindow();
 	}
 
-	public virtual void Update(float dt)
-	{
-	}
-
-	public virtual void Draw()
-	{
-	}
-
 	public virtual void Run()
 	{
-		Init();
+		InternalInit();
 
 #if BF_PLATFORM_WASM
 		emscripten_set_main_loop(=> EmscriptenMainLoop, fps, 1);
 #else
-		defer Close();
+		defer InternalClose();
 		while (RunOneFrame()) {}
 #endif
 	}
@@ -67,10 +63,17 @@ public class RaylibApp
 	{
 		if (!WindowShouldClose())
 		{
+			// @todo: add pre-frame/post-frame events
+
+			// @todo: make this per-step update
 			Update(GetFrameTime());
 
+			// @todo: add fixed-deltaTime update
+
 			BeginDrawing();
-			Draw();
+			{
+				Draw();
+			}
 			EndDrawing();
 
 			return true;
@@ -90,4 +93,14 @@ public class RaylibApp
 		gApp.RunOneFrame();
 	}
 #endif
+
+#region callbacks
+
+	protected virtual void Init() {}
+	protected virtual void Close() {}
+
+	protected virtual void Update(float dt) {}
+	protected virtual void Draw() {}
+
+#endregion
 }

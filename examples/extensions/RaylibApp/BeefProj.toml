@@ -1,0 +1,6 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Raylib = "*"}
+
+[Project]
+Name = "RaylibApp"
+StartupObject = "RaylibApp.Program"
