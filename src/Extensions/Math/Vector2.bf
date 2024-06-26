@@ -44,7 +44,7 @@ namespace Raylib
 			return .(v1.x + v2.x, v1.y + v2.y);
 		}
 
-		[Inline]
+		[Inline, Commutable]
 		public static Vector2 operator+(Vector2 v1, float f)
 		{
 			return .(v1.x + f, v1.y + f);
@@ -102,7 +102,7 @@ namespace Raylib
 			return result;
 		}
 
-		[Inline]
+		[Inline, Commutable]
 		public static Vector2 operator*(Vector2 v, float scale)
 		{
 			return .(v.x * scale, v.y * scale);
@@ -134,7 +134,7 @@ namespace Raylib
 
 		[Inline]
 		/// Normalize provided vector
-		public Vector2 Normalize(Vector2 v2)
+		public Vector2 Normalize()
 		{
 			return this * (1 / Length());
 		}

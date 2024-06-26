@@ -19,7 +19,7 @@
 ## What is done
 - Bindings for:
     - raylib.h
-    - raymath.h (with swizzle support)
+    - raymath.h (types with swizzle support)
     - rlgl.h (partly)
 	- Easings.h
 
@@ -32,8 +32,8 @@
 ## TODO:
 - Rewrite examples in Beef
 - Finish rlgl.h bindings
+- Planning to seperate extensions to other projects (maybe use with Raylib Beef bindings generator version)
 - Add raygui
-- Distinct Quaternion from Vector4 (in Beef we have convert operator, so distinct type make better programming experience)
 - Extensions for user using raylib functions with Beef standard library
 	- `StringView` instead of `char8*`
 	- `Span<T>` instead of `(int count, T* array)`
@@ -45,6 +45,13 @@
 	- Type related functions. Donot remove function bindings. 
 - Use this project as based/starter project for gamedev with Beef
 	- See [beef-gamedev](https://github.com/maihd/beef-gamedev)
+
+## Changes from origin
+- Raylib 5.0
+- Extensions for types
+- Vectors swizzles
+- Vectors operators with component-wise operations
+- Distinct Quaternion from Vector4 (in Beef we have convert operator, so distinct type make better programming experience)
 
 # Quick Start *(using Beef IDE)*
 1. **Download** raylib-beef.zip **FROM RELEASE PAGE** and extract raylib-beef folder from that zip file to: **C:\Program Files\BeefLang\BeefLibs**

@@ -47,7 +47,7 @@ namespace Raylib
 			return .(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z);
 		}
 
-		[Inline]
+		[Inline, Commutable]
 		public static Vector3 operator+(Vector3 v, float add)
 		{
 			return .(v.x + add, v.y + add, v.z + add);
@@ -65,7 +65,7 @@ namespace Raylib
 			return .(v.x - sub, v.y - sub, v.z - sub);
 		}
 
-		[Inline]
+		[Inline, Commutable]
 		public static Vector3 operator*(Vector3 v, float scalar)
 		{
 			return .(v.x * scalar, v.y * scalar, v.z * scalar);
