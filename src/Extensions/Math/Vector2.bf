@@ -5,6 +5,20 @@ namespace Raylib
     [Swizzle(2)]
 	public extension Vector2
 	{
+#region Common values/constants
+
+		public const Vector2 Zero 	= .(0.0f);
+		public const Vector2 One 	= .(1.0f);
+		public const Vector2 UnitX 	= .(1.0f, 0.0f);
+		public const Vector2 UnitY 	= .(0.0f, 1.0f);
+
+		public const Vector2 Up		= .( 0.0f,  1.0f);
+		public const Vector2 Down 	= .( 0.0f, -1.0f);
+		public const Vector2 Left	= .(-1.0f,  0.0f);
+		public const Vector2 Right  = .( 1.0f,  0.0f);
+
+#endregion
+
 		[Inline]
 		public this()
 		{
@@ -30,14 +44,144 @@ namespace Raylib
 			outStr.AppendF("Vector2({}, {})", x, y);
 		}
 
-		// Common values
-		public const Vector2 Zero = .(0);
-		public const Vector2 One = .(1f);
-		public const Vector2 UnitX = .(1, 0);
-		public const Vector2 UnitY = .(0, 1);
+#region Properties
+		/// Get vector length
+		[Inline]
+		public float length => Length(this);
+		
+		/// Get vector square length
+		[Inline]
+		public float lengthSqr => LengthSqr(this);
 
-		// Convenient operators
+		/// Get normalized vector
+		public Vector2 normalized
+		{
+			[Inline]
+			get
+			{
+				var v = this;
+				v *= (1.0f / length);
+				return v;
+			}
+		}
+#endregion
 
+#region Static Methods
+		/// Calculate vector length
+		[Inline]
+		public static float Length(Vector2 v)
+		{
+			return Math.Sqrt((v.x * v.x) + (v.y * v.y));
+		}
+
+		/// Calculate vector square length
+		[Inline]
+		public static float LengthSqr(Vector2 v)
+		{
+			return (v.x * v.x) + (v.y * v.y);
+		}
+
+		/// Calculate two vectors dot product
+		[Inline]
+		public static float Dot(Vector2 v1, Vector2 v2)
+		{
+			return (v1.x * v2.x + v1.y * v2.y);
+		}
+
+		/// Calculate distance between two vectors
+		[Inline]
+		public static float Distance(Vector2 v1, Vector2 v2)
+		{
+			return Math.Sqrt((v1 - v2).length);
+		}
+
+		/// Calculate angle from two vectors in X-axis
+		[Inline]
+		public static float Angle(Vector2 v1, Vector2 v2)
+		{
+			var result = Math.Atan2(v2.y - v1.y, v2.x - v2.x) * 180 / Math.PI_f;
+			if (result < 0) result += 360.0f;
+			return result;
+		}
+
+		/// Calculate linear interpolation between two vectors
+		[Inline]
+		public static Vector2 Lerp(Vector2 v1, Vector2 v2, float amount)
+		{
+			Vector2 result = default;
+
+			result.x = v1.x + amount * (v2.x - v1.x);
+			result.y = v1.y + amount * (v2.y - v1.y);
+
+			return result;
+		}
+
+		/// Calculate reflected vector to normal
+		[Inline]
+		public static Vector2 Reflect(Vector2 v, Vector2 normal)
+		{
+			Vector2 result = default;
+
+			float dotProduct = Dot(v, normal);
+			result.x = v.x - (2.0f * normal.x) * dotProduct;
+			result.y = v.y - (2.0f * normal.y) * dotProduct;
+
+			return result;
+		}
+
+		/// Rotate Vector by float in Degrees.
+		[Inline]
+		public static Vector2 Rotate(Vector2 v, float degs)
+		{
+			float rads = degs * Raylib.DEG2RAD;
+			Vector2 result = .(
+				v.x * Math.Cos(rads) - v.y * Math.Sin(rads),
+				v.x * Math.Sin(rads) + v.y * Math.Cos(rads)
+			);
+			return result;
+		}
+
+		/// Move Vector towards target
+		[Inline]
+		public static Vector2 MoveTowards(Vector2 v, Vector2 target, float maxDistance)
+		{
+			Vector2 result = default;
+			float dx = target.x - v.x;
+			float dy = target.y - v.y;
+			float value = (dx * dx) + (dy * dy);
+
+			if ((value == 0) || ((maxDistance >= 0) &&
+				(value <= maxDistance * maxDistance)))
+				result = target;
+
+			float dist = Math.Sqrt(value);
+
+			result.x = v.x + dx / dist * maxDistance;
+			result.y = v.y + dy / dist * maxDistance;
+
+			return result;
+		}
+#endregion
+
+#region Methods
+		/// <summary>
+		/// Normalize provided vector
+		/// </summary>
+		[Inline]
+		public void Normalize() mut
+		{
+			this = normalized;
+		}
+
+		/// Move Vector towards target
+		[Inline]
+		public void MoveTowards(Vector2 target, float maxDistance) mut
+		{
+			this = MoveTowards(this, target, maxDistance);
+		}
+#endregion
+
+#region Operators
 		[Inline]
 		public static Vector2 operator+(Vector2 v1, Vector2 v2)
 		{
@@ -63,43 +207,9 @@ namespace Raylib
 		}
 
 		[Inline]
-		/// Calculate vector length
-		public float Length()
+		public static Vector2 operator-(float f, Vector2 v)
 		{
-			return Math.Sqrt((this.x * this.x) + (this.y * this.y));
-		}
-
-		[Inline]
-		/// Calculate vector square length
-		public float LengthSqr()
-		{
-			return (this.x * this.x) + (this.y * this.y);
-		}
-
-		[Inline]
-		/// Calculate two vectors dot product
-		public float DotProduct(Vector2 v2)
-		{
-			return (this.x * v2.x + this.y * v2.y);
-		}
-
-		[Inline]
-		/// Calculate distance between two vectors
-		public float Distance(Vector2 v2)
-		{
-			return Math.Sqrt((this.x - v2.x) * (this.x - v2.x) +
-				(this.y - v2.y) * (this.y - v2.y));
-		}
-
-		[Inline]
-		/// Calculate angle from two vectors in X-axis
-		public float Angle(Vector2 v2)
-		{
-			var result =
-				Math.Atan2(v2.y - this.y, v2.x - this.x)
-				* 180 / Math.PI_f;
-			if (result < 0) result += 360.0f;
-			return result;
+			return .(f - v.x, f - v.y);
 		}
 
 		[Inline, Commutable]
@@ -133,89 +243,28 @@ namespace Raylib
 		}
 
 		[Inline]
-		/// Normalize provided vector
-		public Vector2 Normalize()
-		{
-			return this * (1 / Length());
-		}
-
-		[Inline]
-		/// Calculate linear interpolation between two vectors
-		public Vector2 Lerp(Vector2 v2, float amount)
-		{
-			Vector2 result = default;
-
-			result.x = this.x + amount * (v2.x - this.x);
-			result.y = this.y + amount * (v2.y - this.y);
-
-			return result;
-		}
-
-		[Inline]
-		/// Calculate reflected vector to normal
-		public Vector2 Reflect(Vector2 normal)
-		{
-			Vector2 result = default;
-
-			float dotProduct = DotProduct(normal);
-			result.x = this.x - (2.0f * normal.x) * dotProduct;
-			result.y = this.y - (2.0f * normal.y) * dotProduct;
-
-			return result;
-		}
-
-		[Inline]
-		/// Rotate Vector by float in Degrees.
-		public Vector2 Rotate(float degs)
-		{
-			float rads = degs * Raylib.DEG2RAD;
-			Vector2 result = .(
-				this.x * Math.Cos(rads) - this.y * Math.Sin(rads),
-				this.x * Math.Sin(rads) + this.y * Math.Cos(rads)
-				);
-			return result;
-		}
-
-		[Inline]
-		/// Move Vector towards target
-		public Vector2 MoveTowards(Vector2 target, float maxDistance)
-		{
-			Vector2 result = default;
-			float dx = target.x - this.x;
-			float dy = target.y - this.y;
-			float value = (dx * dx) + (dy * dy);
-
-			if ((value == 0) || ((maxDistance >= 0) &&
-				(value <= maxDistance * maxDistance)))
-				result = target;
-
-			float dist = Math.Sqrt(value);
-
-			result.x = this.x + dx / dist * maxDistance;
-			result.y = this.y + dy / dist * maxDistance;
-
-			return result;
-		}
-
-		// CUSTOMS -------------------------------------------
 		public static bool operator==(Vector2 v1, Vector2 v2)
 		{
 			return (v1.x == v2.x && v1.y == v2.y);
 		}
 
+		[Inline]
 		public static bool operator!=(Vector2 v1, Vector2 v2)
 		{
 			return !(v1 == v2);
 		}
 
+		[Inline]
 		public static bool operator>(Vector2 v1, Vector2 v2)
 		{
 			return v1.x > v2.x && v1.y > v2.y;
 		}
 
+		[Inline]
 		public static bool operator<(Vector2 v1, Vector2 v2)
 		{
 			return v1.x < v2.x && v1.y < v2.y;
 		}
+#endregion
 	}
 }
