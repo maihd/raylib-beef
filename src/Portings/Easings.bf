@@ -32,7 +32,7 @@
 using System;
 namespace Raylib
 {
-	public static class Easings
+	public static
 	{
 		// Linear Easing functions
 		public static float EaseLinearNone(float t, float b, float c, float d)

@@ -19,9 +19,13 @@
 ## What is done
 - Bindings for:
     - raylib.h
-    - raymath.h (for easy porting)
     - rlgl.h (partly)
-	- Easings.h
+
+- Porting source code for:
+    - raymath.h (for easy porting code from C)
+	- Easings.h (for easy porting code from C)
+
+- Extensions for ergonomic game development
 
 ## Important notes
 - There are no bindings for text manipulating methods
