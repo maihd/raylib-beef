@@ -4,7 +4,8 @@ namespace Raylib
 {
 	struct rAudioBuffer;
 	struct rAudioProcessor;
-
+	
+	/// AudioStream, custom audio stream
 	[CRepr]
 	public struct AudioStream
 	{

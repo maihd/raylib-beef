@@ -2,6 +2,7 @@ using System;
 
 namespace Raylib
 {
+	/// Wave, audio wave data
 	[CRepr]
 	public struct Wave
 	{

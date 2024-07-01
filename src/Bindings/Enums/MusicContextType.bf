@@ -1,6 +1,6 @@
 namespace Raylib;
 
-public enum MusicContextType
+public enum MusicContextType : uint32
 {
 	MUSIC_AUDIO_NONE = 0,   // No audio context loaded
 	MUSIC_AUDIO_WAV,        // WAV audio context
