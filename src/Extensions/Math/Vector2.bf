@@ -164,6 +164,12 @@ namespace Raylib
 #endregion
 
 #region Methods
+		[Inline]
+		public float ToAngle()
+		{
+			return Math.Atan2(y, x);
+		}
+
 		/// <summary>
 		/// Normalize provided vector
 		/// </summary>
