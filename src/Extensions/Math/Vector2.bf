@@ -45,11 +45,17 @@ namespace Raylib
 		}
 
 #region Properties
+		/// Get width, abstraction for treat Vector2 as Size
 		[Inline]
 		public float width => x;
-
+		
+		/// Get height, abstraction for treat Vector2 as Size
 		[Inline]
 		public float height => y;
+
+		/// Get angle of vector, short-name for ToAngle()
+		[Inline]
+		public float angle => ToAngle();
 
 		/// Get vector length
 		[Inline]
@@ -108,6 +114,13 @@ namespace Raylib
 			var result = Math.Atan2(v2.y - v1.y, v2.x - v2.x) * 180 / Math.PI_f;
 			if (result < 0) result += 360.0f;
 			return result;
+		}
+
+		/// Create new vector with angle (radians) and length
+		[Inline]
+		public static Vector2 FromAngle(float angle, float length)
+		{
+			return .(Math.Cos(angle) * length, Math.Sin(angle) * length);
 		}
 
 		/// Calculate linear interpolation between two vectors
@@ -170,6 +183,7 @@ namespace Raylib
 #endregion
 
 #region Methods
+		/// Calculate angle of vector
 		[Inline]
 		public float ToAngle()
 		{
