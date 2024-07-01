@@ -19,7 +19,7 @@
 ## What is done
 - Bindings for:
     - raylib.h
-    - raymath.h (types with swizzle support)
+    - raymath.h (for easy porting)
     - rlgl.h (partly)
 	- Easings.h
 
@@ -28,6 +28,7 @@
 	- Beef already has custom methods for text manupulation
 - rlgl bindings are **partly done**
 - Add `-sUSE_GLFW=3` on wasm32 target
+- This repo for personal using, I currently making 2D games, so many features does not have extensions.
 
 ## TODO:
 - Rewrite examples in Beef
