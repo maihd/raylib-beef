@@ -45,6 +45,12 @@ namespace Raylib
 		}
 
 #region Properties
+		[Inline]
+		public float width => x;
+
+		[Inline]
+		public float height => y;
+
 		/// Get vector length
 		[Inline]
 		public float length => Length(this);
