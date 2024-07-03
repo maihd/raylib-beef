@@ -1,0 +1,7 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Raylib = "*"}
+
+[Project]
+Name = "MusicStream"
+StartupObject = "Program"
+DefaultNamespace = ""

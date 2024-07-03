@@ -31,7 +31,7 @@ static
 		let b = Vector4(5.0f, 6.0f, 7.0f, 8.0f);
 
 		let c = a * b;
-		//Test.Assert(c.x == 5.0f && c.y == 12.0f && c.z == 21.0f && c.w == 32.0f);
+		Test.Assert(c.x == 5.0f && c.y == 12.0f && c.z == 21.0f && c.w == 32.0f);
 	}
 
 	[Test]

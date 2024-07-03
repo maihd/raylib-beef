@@ -1,9 +1,9 @@
 FileVersion = 1
-Projects = {Raylib = {Path = "."}, BasicWindow = {Path = "examples/core/basic"}, InputKeys = {Path = "examples/core/input_keys"}, BasicWindowWeb = {Path = "examples/core/basic_window_web"}, RaylibApp = {Path = "examples/extensions/RaylibApp"}}
-WorkspaceFolders = {Examples = [], "Examples/Core" = ["BasicWindow", "InputKeys", "BasicWindowWeb"], "Examples/Extensions" = ["RaylibApp"]}
+Projects = {Raylib = {Path = "."}, BasicWindow = {Path = "examples/core/basic"}, InputKeys = {Path = "examples/core/input_keys"}, BasicWindowWeb = {Path = "examples/core/basic_window_web"}, RaylibApp = {Path = "examples/extensions/RaylibApp"}, MusicStream = {Path = "examples/audio/music_stream"}}
+WorkspaceFolders = {Examples = [], "Examples/Core" = ["BasicWindow", "InputKeys", "BasicWindowWeb"], "Examples/Extensions" = ["RaylibApp"], "Examples/Audio" = ["MusicStream"]}
 
 [Workspace]
-StartupProject = "RaylibApp"
+StartupProject = "MusicStream"
 
 [Configs.Debug.wasm32]
 AllocType = "CRT"
