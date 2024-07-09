@@ -6,17 +6,15 @@ namespace Raylib
 	public extension Vector2
 	{
 #region Common values/constants
-
-		public const Vector2 Zero 	= .(0.0f);
-		public const Vector2 One 	= .(1.0f);
-		public const Vector2 UnitX 	= .(1.0f, 0.0f);
-		public const Vector2 UnitY 	= .(0.0f, 1.0f);
+		public const Vector2 Zero 	= .( 0.0f,  0.0f);
+		public const Vector2 One 	= .( 1.0f,  1.0f);
+		public const Vector2 UnitX 	= .( 1.0f,  0.0f);
+		public const Vector2 UnitY 	= .( 0.0f,  1.0f);
 
 		public const Vector2 Up		= .( 0.0f,  1.0f);
 		public const Vector2 Down 	= .( 0.0f, -1.0f);
 		public const Vector2 Left	= .(-1.0f,  0.0f);
 		public const Vector2 Right  = .( 1.0f,  0.0f);
-
 #endregion
 
 		[Inline]
@@ -39,10 +37,6 @@ namespace Raylib
 			this.y = value;
 		}
 
-		public override void ToString(String outStr)
-		{
-			outStr.AppendF("Vector2({}, {})", x, y);
-		}
 
 #region Properties
 		/// Get width, abstraction for treat Vector2 as Size
@@ -66,16 +60,8 @@ namespace Raylib
 		public float lengthSqr => LengthSqr(this);
 
 		/// Get normalized vector
-		public Vector2 normalized
-		{
-			[Inline]
-			get
-			{
-				var v = this;
-				v *= (1.0f / length);
-				return v;
-			}
-		}
+        [Inline]
+		public Vector2 normalized => this * (1.0f / length);
 #endregion
 
 #region Static Methods
@@ -183,6 +169,11 @@ namespace Raylib
 #endregion
 
 #region Methods
+		public override void ToString(String outStr)
+		{
+			outStr.Append(scope $"Vector2({x:00.0}, {y:00.0})");
+		}
+
 		/// Calculate angle of vector
 		[Inline]
 		public float ToAngle()
