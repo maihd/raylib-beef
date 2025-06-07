@@ -556,9 +556,9 @@ namespace Raylib
 
 			Vector3 z = eye - target;
 			z.Normalize();
-			Vector3 x = up.CrossProduct(z);
+			Vector3 x = up.Cross(z);
 			x.Normalize();
-			Vector3 y = z.CrossProduct(x);
+			Vector3 y = z.Cross(x);
 
 			result.m0 = x.x;
 			result.m1 = y.x;

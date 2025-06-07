@@ -183,8 +183,8 @@ public extension Quaternion
     {
     	Quaternion result = default;
 
-    	float cos2Theta = from.DotProduct(to);
-    	Vector3 cross = from.CrossProduct(to);
+    	float cos2Theta = from.Dot(to);
+    	Vector3 cross = from.Cross(to);
 
     	result.x = cross.x;
     	result.y = cross.y;
