@@ -2,7 +2,7 @@
 
 : Get raylib source code
 if not exist deps\raylib (
-    git clone https://github.com/raysan5/raylib --depth 1 --branch 5.0 deps/raylib
+    git clone https://github.com/raysan5/raylib --depth 1 --branch 5.5 deps/raylib
 )
 
 : CMake variables

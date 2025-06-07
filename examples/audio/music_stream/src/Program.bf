@@ -29,7 +29,7 @@ class Program
 
         InitAudioDevice();              // Initialize audio device
 
-        Music music = LoadMusicStream("resources/country.mp3");
+        Music music = LoadMusicStream("resources/Music.mp3");
 
         PlayMusicStream(music);
 

@@ -32,7 +32,13 @@
 	- Beef already has custom methods for text manupulation
 - rlgl bindings are **partly done**
 - Add `-sUSE_GLFW=3` on wasm32 target
-- This repo for personal using, I currently making 2D games, so many features does not have extensions.
+- This repo for personal using, I currently making 2D games, so many features does not have extensions. Some practices maybe difference from original C version.
+
+## Supported platforms
+Raylib donot supported multiple graphics backends (only OpenGL family).
+- Windows
+- Android
+- WebAssembly 32bit
 
 ## TODO:
 - Rewrite examples in Beef
@@ -50,9 +56,10 @@
 	- Type related functions. Donot remove function bindings. 
 - Use this project as based/starter project for gamedev with Beef
 	- See [beef-gamedev](https://github.com/maihd/beef-gamedev)
+- Modding rmath.h to use SIMD (or use VectorMath)
 
 ## Changes from origin
-- Raylib 5.0
+- Raylib 5.5
 - Extensions for types
 - Vectors swizzles
 - Vectors operators with component-wise operations
