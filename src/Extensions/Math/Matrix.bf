@@ -572,9 +572,9 @@ namespace Raylib
 			result.m9 = y.z;
 			result.m10 = z.z;
 			result.m11 = 0.0f;
-			result.m12 = -x.DotProduct(eye);
-			result.m13 = -y.DotProduct(eye);
-			result.m14 = -z.DotProduct(eye);
+			result.m12 = -x.Dot(eye);
+			result.m13 = -y.Dot(eye);
+			result.m14 = -z.Dot(eye);
 			result.m15 = 1.0f;
 
 			return result;
